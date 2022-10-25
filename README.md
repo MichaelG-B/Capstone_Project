@@ -11,38 +11,19 @@ Project name is a `<utility/tool/feature>` that allows `<insert_target_audience>
 
 Additional line of information text about what the project does. Your introduction should be around 2 or 3 sentences. Don't go overboard, people won't read it.
 
-## Prerequisites
+## Segment 1
+1. Topic: 
+-    Vietnam War ( US Aircraft losses )
+2. Reason why we selected their topic: 
+-    As a team we selected this topic becuase of our shared interest in historical events as well as due to the nature of the dataset itself; our source provided many features that we thought would make for an interesting story once we applied machine learning. We figured this dataset would also be a solid foundation for us to showcase many of the skills we have learned throughout the course.
+3. Description of our source of data: 
+-    Our data sources are two websites dedicated to military aviation research, those being (https://www.aviationarchaeology.com/index.asp) and (https://www.vietnamairlosses.com/index.php). Each provided data on aircraft losses, such as crash date, pilot status, base stationed, target, squadron, aircraft type, where the aircraft was hit, defense utilized, etc. We obtained the data by scraping the web pages on both sites as the data each held offered slightly different features that we could potentially use. 
+4. Questions we hope to answer with the data: 
+-    A major question we hope to answer with the dataset we have compiled is what feature(s) best indicate a pilot status post crash, specifically what was the greatest determinant of pilot recovery vs pilot KIA.
+5. Description of our communication protocols:
+-
 
-Before you begin, ensure you have met the following requirements:
-<!--- These are just example requirements. Add, duplicate or remove as required --->
-* You have installed the latest version of `<coding_language/dependency/requirement_1>`
-* You have a `<Windows/Linux/Mac>` machine. State which OS is supported/which is not.
-* You have read `<guide/link/documentation_related_to_project>`.
-
-## Installing <project_name>
-
-To install <project_name>, follow these steps:
-
-Linux and macOS:
-```
-<install_command>
-```
-
-Windows:
-```
-<install_command>
-```
-## Using <project_name>
-
-To use <project_name>, follow these steps:
-
-```
-<usage_example>
-```
-
-Add run commands and examples you think users will find useful. Provide an options reference for bonus points!
-
-## Contributing to <project_name>
+## Contributing to Capstone_Project
 <!--- If your README is long or you have some specific process or steps you want contributors to follow, consider creating a separate CONTRIBUTING.md file--->
 To contribute to <project_name>, follow these steps:
 
