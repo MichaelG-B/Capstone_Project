@@ -21,7 +21,7 @@ Additional line of information text about what the project does. Your introducti
 4. Questions we hope to answer with the data: 
 -    A major question we hope to answer with the dataset we have compiled is what feature(s) best indicate a pilot status post crash, specifically what was the greatest determinant of pilot recovery vs pilot KIA.
 5. Description of our communication protocols:
--
+-   Our Team's communication was mainly through a slack channel that we created but we also used a iMessage group chat as an informal means of communication. We also planned several zoom calls in order to coordinate objectives between each other, for instance we established roles and made a plan for what we would accomplish by our next meeting.
 
 ## Contributing to Capstone_Project
 <!--- If your README is long or you have some specific process or steps you want contributors to follow, consider creating a separate CONTRIBUTING.md file--->
