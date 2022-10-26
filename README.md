@@ -23,6 +23,22 @@ Additional line of information text about what the project does. Your introducti
 5. Description of our communication protocols:
 -   Our Team's communication was mainly through a slack channel that we created but we also used a iMessage group chat as an informal means of communication. We also planned several zoom calls in order to coordinate objectives between each other, for instance we established roles and made a plan for what we would accomplish by our next meeting.
 
+## Ben's Addition Begin:
+### Technologies Used
+
+### Data Cleaning and Analysis:
+The data will first be pulled from its original online source using the webscraping library BeautifulSoup. The dataframe creation, data, cleaning, organizating, and all exploratory analysis will be completed in Pandas.
+
+### Database Storage:
+Our database will be created in PostgreSQL. The sqlalchemy module will be used to pull in data from our python ETL file to Postgres and from Postgres to our machine learning python file.
+
+### Machine Learning:
+SciKitLearn is the ML libary we'll use in Python to create our model. (NEED INFO FROM SAMUEL ON TYPE OF MODEL AND OUR TRAINING AND TESTING SETUP)
+
+### Dashboard:
+We will use Tableau to create an interactive dashboard and story of our findings. This will be hosted on Tableau Public.
+## End of Ben's Addition
+
 ## Contributing to Capstone_Project
 <!--- If your README is long or you have some specific process or steps you want contributors to follow, consider creating a separate CONTRIBUTING.md file--->
 To contribute to <project_name>, follow these steps:
