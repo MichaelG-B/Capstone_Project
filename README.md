@@ -24,3 +24,4 @@ Thanks to the following people who have contributed to this project:
 * [@bfox87](https://github.com/bfox87) 
 * [@CPotts82](https://github.com/CPotts82) 
 * [@samboest](https://github.com/samboest) 
+* [@MichaelG-B](https://github.com/MichaelG-B) 
