@@ -11,7 +11,7 @@
 -   A major question we hope to answer is what feature(s) best predict whether the pilot survived their crash or were killed. Our ML model will try to predict whether the pilot survived based on features like aircraft type and what shot them down, for example.
 5. **Description of our communication protocols:**
 -   Our Team's communication is mainly through a slack channel we created, but we are also using a iMessage group chat as an informal means of communication. We also planned several Zoom calls outside of class in order to have more time to coordinate objectives and problem solve.
-6. Technologies Used:
+6. **Technologies Used:**
 -  **Data Cleaning and Analysis:** All webscraping is being completed using the webscraping library BeautifulSoup. Data cleaning, organizating, and all exploratory analysis is being completed in Pandas.
 -  **Database Storage:** Our database has been created in PostgreSQL. The sqlalchemy module was utilized to pull in data from our python ETL file to Postgres and from Postgres to our machine learning python file.
 -  **Machine Learning:** SciKitLearn is the ML libary we are using in Python to create our model.
