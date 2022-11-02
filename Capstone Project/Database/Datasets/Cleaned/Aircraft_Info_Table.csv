@@ -1,0 +1,76 @@
+Aircraft_Type,Full_Aircraft_Name,Summarized_Name,Ejection_Seats
+A-1,A-1 Skyraider,A-1 Skyraider,Y
+A-1E,A-1E Skyraider,A-1 Skyraider,Y
+A-1G,A-1G Skyraider,A-1 Skyraider,Y
+A-1H,A-1H Skyraider,A-1 Skyraider,Y
+A-1H/J,A-1H/J Skyraider,A-1 Skyraider,Y
+A-1J,A-1J Skyraider,A-1 Skyraider,Y
+A-26,A-26 Invader,A-26 Invader,Y
+A-26A,A-26A Invader,A-26 Invader,Y
+A-37,A-37 Dragonfly,A-37 Dragonfly,Y
+A-37A,A-37A Dragonfly,A-37 Dragonfly,Y
+A-7D,A-7D Corsair,A-7 Corsair,Y
+AC-47,AC-47 Gunship I,AC-47 Gunship I,N
+AC-47D,AC-47D Gunship I,AC-47 Gunship I,N
+B-26B,B-26B Invader,B-26 Invader,N
+RB-26B,RB-26B Invader,B-26 Invader,N
+B-52,B-52 Stratofortress,B-52 Stratofortress,Y
+B-52D,B-52D Stratofortress,B-52 Stratofortress,Y
+B-57,B-57 Canberra,B-57 Canberra,Y
+B-57B,B-57B Canberra,B-57 Canberra,Y
+RB-57,RB-57 Canberra,B-57 Canberra,Y
+EB-66C,EB-66C Destroyer,B-66 Destroyer,Y
+RB-66,RB-66 Destroyer,B-66 Destroyer,Y
+RB-66C,RB-66C Destroyer,B-66 Destroyer,Y
+AC-119K,AC-119K Gunship III,C-119 Flying Boxcar,N
+C-123,C-123 Provider,C-123 Provider,N
+C-123B,C-123B Provider,C-123 Provider,N
+C-123K,C-123K Provider,C-123 Provider,N
+UC-123,UC-123 Provider,C-123 Provider,N
+AC-130A,AC-130A Gunship II,C-130 Hercules,N
+C-130,C-130 Hercules,C-130 Hercules,N
+C-130A,C-130A Hercules,C-130 Hercules,N
+C-130E,C-130E Hercules,C-130 Hercules,N
+EC-47,EC-47 Skytrain,C-47 Skytrain,N
+EC-47P,EC-47P Skytrain,C-47 Skytrain,N
+EC-47Q,EC-47Q Skytrain,C-47 Skytrain,N
+RC-47,RC-47 Skytrain,C-47 Skytrain,N
+SC-47A,SC-47A Skytrain,C-47 Skytrain,N
+C-7,C-7 Caribou,C-7 Caribou,N
+C-7A,C-7 Caribou,C-7 Caribou,N
+F-100,F-100 Super Sabre,F-100 Super Sabre,Y
+F-100C,F-100C Super Sabre,F-100 Super Sabre,Y
+F-100D,F-100D Super Sabre,F-100 Super Sabre,Y
+F-100F,F-100F Super Sabre,F-100 Super Sabre,Y
+RF-101,RF-101 Voodoo,F-101 Voodoo,Y
+RF-101C,RF-101C Voodoo,F-101 Voodoo,Y
+F-102,F-102 Delta Dagger,F-102 Delta Dagger,Y
+F-102A,F-102A Delta Dagger,F-102 Delta Dagger,Y
+F-104,F-104 Starfighter,F-104 Starfighter,Y
+F-104C,F-104C Starfighter,F-104 Starfighter,Y
+F-105,F-105 Thunderchief,F-105 Thunderchief,Y
+F-105D,F-105D Thunderchief,F-105 Thunderchief,Y
+F-105F,F-105F Thunderchief,F-105 Thunderchief,Y
+F-105G,F-105G Thunderchief,F-105 Thunderchief,Y
+F-111A,F-111A Aardvark,F-111 Aardvark,Y
+F-4,F-4 Phantom,F-4 Phantom,Y
+F-4C,F-4C Phantom,F-4 Phantom,Y
+F-4D,F-4D Phantom,F-4 Phantom,Y
+F-4E,F-4E Phantom,F-4 Phantom,Y
+RF-4,RF-4 Phantom,F-4 Phantom,Y
+RF-4C,RF-4C Phantom,F-4 Phantom,Y
+F-5,F-5 Tiger,F-5 Tiger,Y
+HU-16B,HU-16B Albatross,HU-16 Albatross,N
+O-1,O-1 Bird Dog,O-1 Bird Dog,N
+O-1E,O-1E Bird Dog,O-1 Bird Dog,N
+O-1F,O-1F Bird Dog,O-1 Bird Dog,N
+O-1G,O-1G Bird Dog,O-1 Bird Dog,N
+O-2,O-2 Skymaster,O-2 Skymaster,N
+O-2A,O-2A Skymaster,O-2 Skymaster,N
+O-2B,O-2B Skymaster,O-2 Skymaster,N
+OV-10,OV-10 Bronco,OV-10 Bronco,Y
+OV-10A,OV-10A Bronco,OV-10 Bronco,Y
+T-28,T-28 Trojan,T-28 Trojan,N
+T-28B,T-28B Trojan,T-28 Trojan,N
+T-28D,T-28D Trojan,T-28 Trojan,N
+U-10,U-10 Courier,U-10 Courier,N
