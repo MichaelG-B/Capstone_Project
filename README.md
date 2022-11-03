@@ -57,6 +57,8 @@ Accomplishments and goals moving forward-
 
 - Updated and managed our projects github repository in order to keep a clean working repository
 	- Helped team members with issues/problems that arose with Github
+	- Altered file structure with advice/help of team
 
-- Collaborated with Ben in order to determine best strategies for dahboard/visualizations
-	- 
+- Collaborated with Ben in order to plan and determine best strategies for dahboard/visualizations
+	- Determined that it is in our groups best interest to have our foundation for the visualization aspects of the project to be rooted in Tableau but we would work to utilize another resource such as Leaflet, D3, Mapbox API to build another map visual.
+	- Additionally we planned to create this additional visual with as much interactivity as possible. 
