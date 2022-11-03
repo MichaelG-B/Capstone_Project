@@ -1,3 +1,5 @@
+--Updated final join logic 11.2.22
+
 -- Creating initial tables for Capstone_Project database
 -- Creating Table with military base information
 CREATE TABLE Base_Table (
@@ -51,11 +53,11 @@ SELECT * FROM aircraft_table;
 
 -- Create usaf_defense table 
 CREATE TABLE usaf_defense AS
-	SELECT "Crash_Date", "Crash_Time", "Aircraft_Type", "Aircraft_SN", "Base", "Wing", "Squadron",
+	SELECT "Crash_Date", "Crash_Time", "Aircraft_Type", "Base", "Wing", "Squadron",
 		"Mission_Type", "Weapon", "Target_Objective", "Ceiling_Vis", "Maneuver", "Pass", "Angle", "Altitude", 
 		"Airspeed", "Mission_Phase", "Where_Hit", "Fire_Observed", "Hit_Country", "Loss_Country", "Latitude", "Longitude",
 		"Defense_Type", defense_type.Defense_Type_New, "Pilot_Hit", "Pilot_Rank", "Pilot", "Pilot_Egress",
-		"Pilot_Condition", "Pilot_Recovered", "Pilot_Status"
+		"Pilot_Condition", "Pilot_Recovered", "Pilot_Status", "Aircraft_SN"
 	FROM usaf_table
 	JOIN defense_type
 	ON "Defense_Type" = defense_type;
@@ -64,19 +66,21 @@ SELECT * FROM usaf_defense;
 
 -- Create usaf_complete table 
 CREATE TABLE usaf_complete AS
-	SELECT "Crash_Date", "Crash_Time", serial_number, usaf_defense."Aircraft_Type", aircraft_table.summarized_name, aircraft_table.ejection_seats, "Base", "Wing", "Squadron",
+	SELECT "Crash_Date", "Crash_Time", usaf_defense."Aircraft_SN", usaf_defense."Aircraft_Type", aircraft_table.summarized_name, aircraft_table.ejection_seats, "Base", "Wing", "Squadron",
 		"Mission_Type", "Weapon", "Target_Objective", "Ceiling_Vis", "Maneuver", "Pass", "Angle", "Altitude", 
 		"Airspeed", "Mission_Phase", "Where_Hit", "Fire_Observed", "Hit_Country", "Loss_Country", "Latitude", "Longitude",
 		"Defense_Type", usaf_defense.defense_type_new, "Pilot_Hit", "Pilot_Rank", "Pilot", "Pilot_Egress",
 		"Pilot_Condition", "Pilot_Recovered", "Pilot_Status"
 	FROM usaf_defense 
 	JOIN aircraft_table 
-	ON serial_number = "Aircraft_SN";
+	ON usaf_defense."Aircraft_SN" = aircraft_table."Aircraft_SN";
 
 -- Change joined column names to reflect format of table
-ALTER TABLE usaf_complete RENAME COLUMN serial_number TO "Aircraft_SN";
+--ALTER TABLE usaf_complete RENAME COLUMN serial_number TO "Aircraft_SN";  This was corrected in the Schema code above
 ALTER TABLE usaf_complete RENAME COLUMN ejection_seats TO "Ejection_Seats";
 ALTER TABLE usaf_complete RENAME COLUMN summarized_name TO "Summarized_Name";
 ALTER TABLE usaf_complete RENAME COLUMN defense_type_new TO "Defense_Category";
 
 SELECT * FROM usaf_complete;
+
+Select * From usaf_table
