@@ -47,3 +47,18 @@ Accomplishments and goals moving forward-
 	- in the process of working on binning and cleaning data 
 	- goal is to optimize and have ready by next Tuesday
 
+### Michael Beyer - Square Role
+
+- Worked on finding viable options other than Tableau for our project's visuals / dashboard
+	- installed Streamlit and created a python script that connected a local Streamlit server to our Postgres SQL database
+	- Uploaded our Vietnam_USAF_Losses_Cleaned_Data.csv to Google Data Studio
+	- Tested Streamlit's and Google Data Studio's features and tried to determine usability for our project
+	- Created a Map highlighting base locations using Mapbox API, coordinate data, and D3.
+
+- Updated and managed our projects github repository in order to keep a clean working repository
+	- Helped team members with issues/problems that arose with Github
+	- Altered file structure with advice/help of team
+
+- Collaborated with Ben in order to plan and determine best strategies for dahboard/visualizations
+	- Determined that it is in our groups best interest to have our foundation for the visualization aspects of the project to be rooted in Tableau but we would work to utilize another resource such as Leaflet, D3, Mapbox API to build another map visual.
+	- Additionally we planned to create this additional visual with as much interactivity as possible. 
