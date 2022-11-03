@@ -47,3 +47,7 @@ Accomplishments and goals moving forward-
 	- in the process of working on binning and cleaning data 
 	- goal is to optimize and have ready by next Tuesday
 
+### Michael Beyer - Square Role
+
+- Worked on finding viable options other than Tableau for our project's visuals / dashboard
+	- installed Streamlit and created a python script that connected a local Streamlit server to our Postgres SQL database
