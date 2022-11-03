@@ -51,9 +51,12 @@ Accomplishments and goals moving forward-
 
 - Worked on finding viable options other than Tableau for our project's visuals / dashboard
 	- installed Streamlit and created a python script that connected a local Streamlit server to our Postgres SQL database
-	- Tested Streamlit's features and tried to determine usability for our project
+	- Uploaded our Vietnam_USAF_Losses_Cleaned_Data.csv to Google Data Studio
+	- Tested Streamlit's and Google Data Studio's features and tried to determine usability for our project
+	- Created a Map highlighting base locations using Mapbox API, coordinate data, and D3.
 
 - Updated and managed our projects github repository in order to keep a clean working repository
 	- Helped team members with issues/problems that arose with Github
 
-
+- Collaborated with Ben in order to determine best strategies for dahboard/visualizations
+	- 
