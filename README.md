@@ -2,13 +2,13 @@
 
 ## Segment 1
 1. **Topic:**
--   An analysis of U.S. aircraft losses during the Vietnam War.
-2. **Reason why we selected their topic:**
--   As a team we selected this topic because of our shared interest in historical events as well as the nature of the dataset itself. Our sources provided many features we thought would make for an interesting story once we applied machine learning. We believe the challenges of analyzing this data give us the chance to showcase many of the skills we have learned throughout the course.
+-   An analysis of pilot survivability from U.S. aircraft combat losses during the Vietnam War.
+2. **Reason this topic was selected:**
+-   As a team we selected this topic because of our shared interest in historical events as well as the nature of the dataset itself. Our data sources provided many features we thought would make for an interesting story once we applied machine learning; notably key characteristics that have potential for influencing pilot survivability. We believe the challenges of analyzing this dataset give us the chance to showcase many of the skills we have learned throughout the course.
 3. **Description of our source of data:**
 -   Our data sources are two websites dedicated to military aviation research, those being (https://www.aviationarchaeology.com/index.asp) and (https://www.vietnamairlosses.com/index.php). Each provided data on aircraft losses, such as crash date, pilot status, base, aircraft type, etc. However, our initial ML model is working solely off of aviationarchaeology.com since there is a more complete picture of the crash characteristics on this page. All data used was obtained through the use of web scraping techniques. 
 4. **Questions we hope to answer with the data:**
--   A major question we hope to answer is what feature(s) best predict whether the pilot survived their crash or were killed. Our ML model will try to predict whether the pilot survived based on features like aircraft type and what shot them down, for example.
+-   Can looking at the characteristics of each warplane crash predict whether or not the pilot survived the crash. Our ML model will seek to predict whether a pilot survived or was killed based on particular crash features like aircraft type or what armament hit the plane, for example.
 5. **Description of our communication protocols:**
 -   Our Team's communication is mainly through a slack channel we created, but we are also using a iMessage group chat as an informal means of communication. We also planned several Zoom calls outside of class in order to have more time to coordinate objectives and problem solve.
 6. **Technologies Used:**
@@ -50,7 +50,7 @@ Accomplishments and goals moving forward-
 ### Michael Beyer - Square Role
 
 - Worked on finding viable options other than Tableau for our project's visuals / dashboard
-	- installed Streamlit and created a python script that connected a local Streamlit server to our Postgres SQL database
+	- Installed Streamlit and created a python script that connected a local Streamlit server to our Postgres SQL database
 	- Uploaded our Vietnam_USAF_Losses_Cleaned_Data.csv to Google Data Studio
 	- Tested Streamlit's and Google Data Studio's features and tried to determine usability for our project
 	- Created a Map highlighting base locations using Mapbox API, coordinate data, and D3.
@@ -59,6 +59,19 @@ Accomplishments and goals moving forward-
 	- Helped team members with issues/problems that arose with Github
 	- Altered file structure with advice/help of team
 
-- Collaborated with Ben in order to plan and determine best strategies for dahboard/visualizations
+- Collaborated with Ben in order to plan and determine best strategies for dashboard/visualizations
 	- Determined that it is in our groups best interest to have our foundation for the visualization aspects of the project to be rooted in Tableau but we would work to utilize another resource such as Leaflet, D3, Mapbox API to build another map visual.
-	- Additionally we planned to create this additional visual with as much interactivity as possible. 
+	- Additionally we planned to create this additional visual with as much interactivity as possible.
+
+### Ben Fox - X Role
+
+- Created initial visuals in Tableau
+	- Connected Tableau Desktop to local instance of our Postgres database
+	- Built an initial dashboard consisting of visuals of the fields used in our ML model
+
+- Collaborated with Michael to plan and determine best strategies for dashboard/visualizations
+	- Built a small interactive map in Leaflet to determine if a viable option for an interactive visual
+	- Sketched out a storyboard that outlines our plan for a Tableau Story
+
+- Worked with Clara to improve the data cleaning in our ETL file
+	- Added code that translates the loss location coordinates into values useable for plotting on maps
