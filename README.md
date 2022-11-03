@@ -25,3 +25,25 @@ Thanks to the following people who have contributed to this project:
 * [@CPotts82](https://github.com/CPotts82) 
 * [@samboest](https://github.com/samboest) 
 * [@MichaelG-B](https://github.com/MichaelG-B) 
+
+## Segment 2
+
+Accomplishments and goals moving forward-
+
+### Clara Potts – Circle Role
+- Partnered with Ben on updating the ETL file with more data cleaning code in order to export cleaned dataframe to Postgres. The new loss_locations_table was created on the ETL file and connected to Postgres with SQLAlchemy.
+
+- Created 3 additional tables using joins in Postgres. The purpose was to create the final usaf_complete table to be used in the machine learning models. The following tables were created this week:
+	- aircraft_table
+	- usaf_defense
+	- usaf_complete 
+
+- Updated and maintained Schema.sql file with the SQL code for each of the new tables created. 
+
+- Updated and maintained ERD to include all tables that are currently in the database. The ERD shows the flow of table creation starting with the uploaded dataframe from the python ETL file. The diagram flows right showing tables created by imported csv’s and joins in postgres until the final table on the far right. This is the table that the machine learning models will pull data from, usaf_complete. 
+
+- Created preliminary model of Neural Net:
+	- set up initial structure
+	- in the process of working on binning and cleaning data 
+	- goal is to optimize and have ready by next Tuesday
+
