@@ -16,10 +16,53 @@
 -  **Database Storage:** Our database has been created in PostgreSQL. The sqlalchemy module was utilized to pull in data from our python ETL file to Postgres and from Postgres to our machine learning python file.
 -  **Machine Learning:** SciKitLearn is the ML libary we are using in Python to create our model.
 -  **Dashboard:** We plan to use Tableau to create an interactive dashboard and story of our findings. This will be hosted on Tableau Public.
+
+## Segment 2
+
+### Description of the analysis phase of the project
+![Project_Outline](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Visualizations/Screenshots/Project_Outline.PNG)
+
+### Initial Exploration Dashboard
 ![Initial_Exploration_Dashboard](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Visualizations/Screenshots/Initial_Exploration_Dashboard.PNG)
 
+### Storyboard of Dashboard
 ![Storyboard](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Visualizations/Screenshots/Storyboard.PNG)
-![Project_Outline](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Visualizations/Screenshots/Project_Outline.PNG)
+
+### Description of the data exploration phase of the project
+Our raw data was first scraped using the BeautifulSoup library in Pandas.
+
+- The data pulled from the web needed a lot of work to become useable:
+- Splitting the data into multiple columns
+ - Removing rows with missing data
+ - Converting certain string fields to integers, datetime
+ - Converting location data into decimal degrees format
+- Some quick visuals and count checks were created for the characteristics/fields believed to have the most predictive influence on survivability
+- A major challenge was the incompleteness of some fields within the dataset.
+
+
+### Description of the analysis phase of the project
+For our analysis, we asked the question can plane attributes, location and  artillery features be predictive of plane crash fatalities.  
+Utilizing web scraping, the total population of plane crashes during the Vietnam War was collected.  
+Our question, lends itself to supervised ML models meant to predict outcomes, such as logistic regression and ensemble models.
+During our analysis phase all supervised ml models and learned sampling techniques from class were tested.  
+In our initial draft Random Forest models yielded the highest accuracy.  
+Further refinements included, the addition of new variables from our database, “Ejection Seat (Y/N)”, bucketed aircraft types and defense types, and Latitude and Longitude.  
+These changes reduced the amount of encoded features.  
+This is important as one limiting factor for our analysis, is that it heavily relies on categorical variables which may limit the power of our model.  
+
+With the addition of Latitude and Longitude other geographic variables such as “Base Name”  and “Mission Phase” were removed due to there duplicative nature.  
+Moreover Lat and Lon were preferred due to their integer data type. 
+With the additional data cleaning and features our ML model improved accuracy from 60% (Draft) to 84%.
+
+Description of preliminary data preprocessing
+
+Description of preliminary feature engineering and preliminary feature selection, including their decision-making process
+
+Description of how data was split into training and testing sets
+✓ Explanation of model choice, including limitations and benefits Team members present a fully integrated database.
+
+### DATABASE STUFF
+ERD 
 
 
 ## Contributors
@@ -30,8 +73,6 @@ Thanks to the following people who have contributed to this project:
 * [@CPotts82](https://github.com/CPotts82) 
 * [@samboest](https://github.com/samboest) 
 * [@MichaelG-B](https://github.com/MichaelG-B) 
-
-## Segment 2
 
 Accomplishments and goals moving forward-
 
@@ -81,9 +122,9 @@ Accomplishments and goals moving forward-
 - Worked with Clara to improve the data cleaning in our ETL file
 	- Added code that translates the loss location coordinates into values useable for plotting on maps
 
-#### Samuel Boester - Triangle 
-##### Initial ML Draft
+### Samuel Boester - Triangle 
+Initial ML Draft
 - Utilizing a scrapped database for U.S.A.F. plane crashes during the Vietnam War, multiple supervised ML models were created to see if pilot fatalities could be predicted by the following 1) The ammunition or guns used to shoot down the plane "Defense type" 2) Mission Phase "Leaving, Returning, etc." 3) The pilot's aircraft "Aircraft Type" 4) The pilots home base "Base".  Other variables existed in the database, however many observations had null values.  Therefore, we were limited with the variables or features for our model.
 - In light of our data types (All Categorical) and the lower amount of observations (1000-1500) an ensemble model appeared to be the best fit for our analysis.  To prove that, multiple sampling and and logistic regression analysis were run on the side.
-##### Refinement
+Refinement
 - To imporve our inital draft new features were added such normalized aicraft types and defense types.  Additional new variables were introduced from our database such as ejection seat(Y/N).  Lastly, the variables Base and Mission Phase were dropped in favor of numceric lognitude and latitude data.  Dropping these variables preserved enough data to meet the requirments of our analysis.  With the addition of these variables model accuracy improved from 60% to 84%.
