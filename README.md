@@ -25,6 +25,12 @@
 ### Initial Exploration Dashboard
 ![Initial_Exploration_Dashboard](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Visualizations/Screenshots/Initial_Exploration_Dashboard.PNG)
 
+- Dashboard: interactive elements
+	- An interactive map where users can select a crash location and see key crash info and a picture of the plane involved.
+	- Exploring using Leaflet for this
+image
+
+
 ### Storyboard of Dashboard
 ![Storyboard](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Visualizations/Screenshots/Storyboard.PNG)
 
@@ -63,7 +69,11 @@ Description of how data was split into training and testing sets
 
 ### DATABASE
 
+## ERD
 ![ERD_AllTables](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Database/ERD_AllTables.png)
+
+## Postgres connection string
+![SQLAlchemy_Conn](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Database/SQLAlchemy_Conn.png)
 
 ## Contributors
 
