@@ -19,6 +19,7 @@
 
 
 ![Storyboard](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Visualizations/Screenshots/Storyboard.PNG)
+![Project_Outline](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Visualizations/Screenshots/Project_Outline.PNG)
 
 ## Contributors
 
