@@ -1,6 +1,6 @@
 # Capstone_Project
+### Project Summary
 
-## Segment 1
 1. **Topic:**
 -   An analysis of pilot survivability from U.S. aircraft combat losses during the Vietnam War.
 2. **Reason this topic was selected:**
@@ -17,22 +17,8 @@
 -  **Machine Learning:** SciKitLearn is the ML libary we are using in Python to create our model.
 -  **Dashboard:** We plan to use Tableau to create an interactive dashboard and story of our findings. This will be hosted on Tableau Public.
 
-## Segment 2
-
-### Description of the analysis phase of the project
+### Project Outline
 ![Project_Outline](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Visualizations/Screenshots/Project_Outline.PNG)
-
-### Initial Exploration Dashboard
-![Initial_Exploration_Dashboard](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Visualizations/Screenshots/Initial_Exploration_Dashboard.PNG)
-
-- Dashboard: interactive elements
-	- An interactive map where users can select a crash location and see key crash info and a picture of the plane involved.
-	- Exploring using Leaflet for this
-image
-
-
-### Storyboard of Dashboard
-![Storyboard](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Visualizations/Screenshots/Storyboard.PNG)
 
 ### Description of the data exploration phase of the project
 Our raw data was first scraped using the BeautifulSoup library in Pandas.
@@ -45,37 +31,57 @@ Our raw data was first scraped using the BeautifulSoup library in Pandas.
 - Some quick visuals and count checks were created for the characteristics/fields believed to have the most predictive influence on survivability
 - A major challenge was the incompleteness of some fields within the dataset.
 
+### Initial Exploration Dashboard
+![Initial_Exploration_Dashboard](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Visualizations/Screenshots/Initial_Exploration_Dashboard.PNG)
 
 ### Description of the analysis phase of the project
-For our analysis, we asked the question can plane attributes, location and  artillery features be predictive of plane crash fatalities.  
+- For our analysis, we asked the question can plane attributes, location and  artillery features be predictive of plane crash fatalities.  
 Utilizing web scraping, the total population of plane crashes during the Vietnam War was collected.  
-Our question, lends itself to supervised ML models meant to predict outcomes, such as logistic regression and ensemble models.
-During our analysis phase all supervised ml models and learned sampling techniques from class were tested.  
-In our initial draft Random Forest models yielded the highest accuracy.  
-Further refinements included, the addition of new variables from our database, “Ejection Seat (Y/N)”, bucketed aircraft types and defense types, and Latitude and Longitude.  
-These changes reduced the amount of encoded features.  
-This is important as one limiting factor for our analysis, is that it heavily relies on categorical variables which may limit the power of our model.  
-
-With the addition of Latitude and Longitude other geographic variables such as “Base Name”  and “Mission Phase” were removed due to there duplicative nature.  
-Moreover Lat and Lon were preferred due to their integer data type. 
-With the additional data cleaning and features our ML model improved accuracy from 60% (Draft) to 84%.
-
+	- Our question, lends itself to supervised ML models meant to predict outcomes, such as logistic regression and ensemble models.
+	
 Description of preliminary data preprocessing
 
-Description of preliminary feature engineering and preliminary feature selection, including their decision-making process
+- Prior to running the ML model rows containing nulls and rows containing null values that were strings were removed.
+- During our analysis phase all supervised ml models and learned sampling techniques from class were tested. In our initial draft Random Forest models yielded the highest accuracy.  
+
+Description of preliminary feature engineering and preliminary feature selection, including their decision-making process?
+
+- Further refinements included, the addition of new variables from our database, “Ejection Seat (Y/N)”, bucketed aircraft types and defense types, and Latitude and Longitude. These changes reduced the amount of encoded features.  
+- This is important as one limiting factor for our analysis, is that it heavily relies on categorical variables which may limit the power of our model.  
+
+- With the addition of Latitude and Longitude other geographic variables such as “Base Name”  and “Mission Phase” were removed due to there duplicative nature. Moreover Lat and Lon were preferred due to their integer data type. 
+- With the additional data cleaning and features our ML model improved accuracy from 60% (Draft) to 84%.
+
+- We started off with Seven features which we later encoded to create 45 features
 
 Description of how data was split into training and testing sets
-✓ Explanation of model choice, including limitations and benefits Team members present a fully integrated database.
+- We utilized from sklearn.model_selection import train_test_split to split and train the testing sets.
+
+### Dashboard: interactive elements
+- An interactive map where users can select a crash location and see key crash info and a picture of the plane involved.
+- Exploring using Leaflet for this
+
+![Leaflet_Snapshot](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Visualizations/Screenshots/Leaflet_Snapshot.PNG)
+
+
+### Storyboard of Dashboard
+![Storyboard](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Visualizations/Screenshots/Storyboard.PNG)
 
 ### DATABASE
 
-## ERD
+- ERD
 ![ERD_AllTables](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Database/ERD_AllTables.png)
 
-## Postgres connection string
+- The database includes two separate inner joins that create two tables, aircraft_table and usaf_defense that are then joined to create the final table, usaf_defense.
+
+- Postgres connection string
 ![SQLAlchemy_Conn](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Database/SQLAlchemy_Conn.png)
 
-## Contributors
+- Database stores static data in the form of 9 tables in the database. The initial table brought in from the ETL file, usaf_table. These tables store data for the visualizations and machine learning model to connect to.
+
+- Database interfaces with the project through the connection from the ETL file to Postgres. It also connects to the machine learning model, visualizations and will eventually connect to the final accuracy table from the machine learning model.
+
+### Contributors
 
 Thanks to the following people who have contributed to this project:
 
