@@ -61,9 +61,9 @@ Description of preliminary feature engineering and preliminary feature selection
 Description of how data was split into training and testing sets
 ✓ Explanation of model choice, including limitations and benefits Team members present a fully integrated database.
 
-### DATABASE STUFF
-ERD 
+### DATABASE
 
+![ERD_AllTables](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Database/ERD_AllTables.png)
 
 ## Contributors
 
