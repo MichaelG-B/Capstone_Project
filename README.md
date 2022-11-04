@@ -77,8 +77,8 @@ Accomplishments and goals moving forward-
 	- Added code that translates the loss location coordinates into values useable for plotting on maps
 
 #### Samuel Boester - Triangle 
-- Initial ML Draft
+##### Initial ML Draft
 - Utilizing a scrapped database for U.S.A.F. plane crashes during the Vietnam War, multiple supervised ML models were created to see if pilot fatalities could be predicted by the following 1) The ammunition or guns used to shoot down the plane "Defense type" 2) Mission Phase "Leaving, Returning, etc." 3) The pilot's aircraft "Aircraft Type" 4) The pilots home base "Base".  Other variables existed in the database, however many observations had null values.  Therefore, we were limited with the variables or features for our model.
 - In light of our data types (All Categorical) and the lower amount of observations (1000-1500) an ensemble model appeared to be the best fit for our analysis.  To prove that, multiple sampling and and logistic regression analysis were run on the side.
-#### Refinement
+##### Refinement
 - To imporve our inital draft new features were added such normalized aicraft types and defense types.  Additional new variables were introduced from our database such as ejection seat(Y/N).  Lastly, the variables Base and Mission Phase were dropped in favor of numceric lognitude and latitude data.  Dropping these variables preserved enough data to meet the requirments of our analysis.  With the addition of these variables model accuracy improved from 60% to 84%.
