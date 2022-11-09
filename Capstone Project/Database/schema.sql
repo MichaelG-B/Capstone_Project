@@ -1,4 +1,3 @@
---Updated final join logic 11.2.22
 
 -- Creating initial tables for Capstone_Project database
 -- Creating Table with military base information
@@ -83,4 +82,9 @@ ALTER TABLE usaf_complete RENAME COLUMN defense_type_new TO "Defense_Category";
 
 SELECT * FROM usaf_complete;
 
-Select * From usaf_table
+-- Created geojson_table for interactive map
+CREATE TABLE geojson_table AS 
+	SELECT "Pilot_Status", "Pilot", "Crash_Date", "Summarized_Name", "Defense_Category", "Latitude", "Longitude" 
+	FROM usaf_complete;
+
+SELECT * FROM geojson_table;
