@@ -63,8 +63,13 @@ Description of how data was split into training and testing sets
 
 ![Leaflet_Snapshot](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Visualizations/Screenshots/Leaflet_Snapshot.PNG)
 
+### Interactive Map:
+https://bfox87.github.io/Interactive_Map1/
 
-### Storyboard of Dashboard
+### Test Link for map:
+![Interactive Map](https://bfox87.github.io/Interactive_Map1/)
+
+### Storyboard of Dashboard:
 ![Storyboard](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Visualizations/Screenshots/Storyboard.PNG)
 
 ### DATABASE
