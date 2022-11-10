@@ -3,6 +3,8 @@
 
 [Slides](https://docs.google.com/presentation/d/1cWrdK9TxcrMRLa3PUEGzZ5iBkMwag-XfkhOKCQvgmvI/edit#slide=id.p)
 
+[Link to Tableau Dashboard](https://public.tableau.com/views/Capstone_Project_Workbook/FinalStory?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link)
+
 1. **Topic:**
 -   An analysis of pilot survivability from U.S. aircraft combat losses during the Vietnam War.
 2. **Reason this topic was selected:**
