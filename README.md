@@ -1,7 +1,7 @@
 # Capstone_Project
 ### Project Summary
 
-![Slides](https://docs.google.com/presentation/d/1cWrdK9TxcrMRLa3PUEGzZ5iBkMwag-XfkhOKCQvgmvI/edit#slide=id.p)
+[Slides](https://docs.google.com/presentation/d/1cWrdK9TxcrMRLa3PUEGzZ5iBkMwag-XfkhOKCQvgmvI/edit#slide=id.p)
 
 1. **Topic:**
 -   An analysis of pilot survivability from U.S. aircraft combat losses during the Vietnam War.
