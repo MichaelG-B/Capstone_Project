@@ -17,7 +17,8 @@
 -  **Data Cleaning and Analysis:** All webscraping is being completed using the webscraping library BeautifulSoup. Data cleaning, organizating, and all exploratory analysis is being completed in Pandas.
 -  **Database Storage:** Our database has been created in PostgreSQL. The sqlalchemy module was utilized to pull in data from our python ETL file to Postgres and from Postgres to our machine learning python file.
 -  **Machine Learning:** SciKitLearn is the ML libary we are using in Python to create our model.
--  **Dashboard:** We plan to use Tableau to create an interactive dashboard and story of our findings. This will be hosted on Tableau Public.
+-  **Dashboard:** Using Tableau to create a visual story our findings. An interactive map of crash locations was created in D3, Leaflet and is embedded into our Tableau story and hosted as a page on our Github repo.
+
 
 ![](Capstone%20Project/Visualizations/Project%20Flowchart.png)
 
@@ -113,32 +114,22 @@ Accomplishments and goals moving forward-
 
 ### Michael Beyer - Square Role
 
-- Worked on finding viable options other than Tableau for our project's visuals / dashboard
-	- Installed Streamlit and created a python script that connected a local Streamlit server to our Postgres SQL database
-	- Uploaded our Vietnam_USAF_Losses_Cleaned_Data.csv to Google Data Studio
-	- Tested Streamlit's and Google Data Studio's features and tried to determine usability for our project
-	- Created a Map highlighting base locations using Mapbox API, coordinate data, and D3.
+- Worked on creating a GIF for our Crash Locations map that would skim through markers on the map by year (1962-1973)
+
+- Worked with Ben and Clara to edit our Leaflet/D3 map we created; specifically testing out additional layers that could potentially be used.
+
+- Worked on editing our mock slides to prepare for the final presentation.
 
 - Updated and managed our projects github repository in order to keep a clean working repository
-	- Helped team members with issues/problems that arose with Github
-	- Altered file structure with advice/help of team
 
-- Collaborated with Ben in order to plan and determine best strategies for dashboard/visualizations
-	- Determined that it is in our groups best interest to have our foundation for the visualization aspects of the project to be rooted in Tableau but we would work to utilize another resource such as Leaflet, D3, Mapbox API to build another map visual.
-	- Additionally we planned to create this additional visual with as much interactivity as possible.
+- Helped team members with issues/problems that arose with Github
+
 
 ### Ben Fox - X Role
 
-- Created initial visuals in Tableau
-	- Connected Tableau Desktop to local instance of our Postgres database
-	- Built an initial dashboard consisting of visuals of the fields used in our ML model
-
-- Collaborated with Michael to plan and determine best strategies for dashboard/visualizations
-	- Built a small interactive map in Leaflet to determine if a viable option for an interactive visual
-	- Sketched out a storyboard that outlines our plan for a Tableau Story
-
-- Worked with Clara to improve the data cleaning in our ETL file
-	- Added code that translates the loss location coordinates into values useable for plotting on maps
+- Redesigned initial Tableau dashboard to be a more complete and improved visual story
+- Worked with Clara and Michael to build our interactive map with D3 + Leaflet
+- Collaborated with Samuel to determine best way to visualize the ML results in Tableau
 
 
 # Updates to ML Sections based on final rubric requirments
