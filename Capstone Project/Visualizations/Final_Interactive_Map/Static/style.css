@@ -22,18 +22,15 @@ body,
   opacity: 0.7;
 }
 
-.L.control.textbox {
+.Tlegend {
   padding: 10px;
-  line-height: 30px;
-  font-size: 60px;
-  font-weight: 300;
+  line-height: 18px;
   color: #555;
   background-color: #fff;
-  border-radius: 8px;
+  border-radius: 5px;
 }
-
-.L.control.textbox i {
-  width: 48px;
+.Tlegend i {
+  width: 18px;
   height: 18px;
   float: left;
   margin-right: 8px;
