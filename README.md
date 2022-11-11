@@ -21,7 +21,6 @@
 -  **Machine Learning:** SciKitLearn is the ML libary we are using in Python to create our model.
 -  **Dashboard:** We plan to use Tableau to create an interactive dashboard and story of our findings. This will be hosted on Tableau Public.
 
-### Project Outline
 ![](Capstone%20Project/Visualizations/Project%20Flowchart.png)
 
 ### Description of the data exploration phase of the project
