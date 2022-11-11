@@ -71,6 +71,9 @@ https://michaelg-b.github.io/Capstone_Project/
 ### Storyboard of Dashboard:
 ![Storyboard](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Visualizations/Screenshots/Storyboard.PNG)
 
+### Crash Locations GIF
+![](https://github.com/MichaelG-B/Capstone_Project/blob/079f57a4a71d2260850d1bd086ffb723479870e6/Final_crash_locations_gif.gif)
+
 ### DATABASE
 
 - ERD
