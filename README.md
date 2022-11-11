@@ -22,7 +22,7 @@
 -  **Dashboard:** We plan to use Tableau to create an interactive dashboard and story of our findings. This will be hosted on Tableau Public.
 
 ### Project Outline
-![Project_Outline](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Visualizations/Screenshots/Project_Outline.PNG)
+![](Capstone%20Project/Visualizations/Project%20Flowchart.png)
 
 ### Description of the data exploration phase of the project
 Our raw data was first scraped using the BeautifulSoup library in Pandas.
