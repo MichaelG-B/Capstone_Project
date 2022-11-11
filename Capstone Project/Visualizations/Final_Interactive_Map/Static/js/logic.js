@@ -358,19 +358,19 @@ d3.json("Capstone Project/Visualizations/Final_Interactive_Map/Data/map2.geojson
   // Adding legend to the map.
   legend.addTo(map);
  
-  // Creating textbox for map title
-  L.Control.textbox = L.Control.extend({
-    onAdd: function() {
+  // Adding second legend to stand in for the title.
+  let Tlegend = L.control({
+    position: "bottomright"
+  })
+  
+  // Then adding all the details for the second legend.
+    Tlegend.onAdd = function() {
+      let div = L.DomUtil.create("div", "info legend");
 
-      var text = L.DomUtil.create('div');
-      text.id = "info_text";
-      text.innerHTML = "<strong>USAF Combat-Related Losses in the Vietnam War from 1962-1973</strong>"
-      return text;
-    }
-  });
-  // Will not work without this next line of code
-  L.control.textbox = function(opts) { return new L.Control.textbox(opts)};
-  // Adding textbox to map
-  L.control.textbox({ position: 'bottomright' }).addTo(map);
+      div.innerHTML += '<b>USAF Combat-Related Losses in the Vietnam War 1962-1973</b><br>';
+      return div;
+  };
+  // Adding second legend to the map.
+  Tlegend.addTo(map);
 
 });
