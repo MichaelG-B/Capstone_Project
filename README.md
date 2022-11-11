@@ -13,9 +13,7 @@
 -   Our data sources are two websites dedicated to military aviation research, those being (https://www.aviationarchaeology.com/index.asp) and (https://www.vietnamairlosses.com/index.php). Each provided data on aircraft losses, such as crash date, pilot status, base, aircraft type, etc. However, our initial ML model is working solely off of aviationarchaeology.com since there is a more complete picture of the crash characteristics on this page. All data used was obtained through the use of web scraping techniques. 
 4. **Questions we hope to answer with the data:**
 -   Can looking at the characteristics of each warplane crash predict whether or not the pilot survived the crash. Our ML model will seek to predict whether a pilot survived or was killed based on particular crash features like aircraft type or what armament hit the plane, for example.
-5. **Description of our communication protocols:**
--   Our Team's communication is mainly through a slack channel we created, but we are also using a iMessage group chat as an informal means of communication. We also planned several Zoom calls outside of class in order to have more time to coordinate objectives and problem solve.
-6. **Technologies Used:**
+5. **Technologies Used:**
 -  **Data Cleaning and Analysis:** All webscraping is being completed using the webscraping library BeautifulSoup. Data cleaning, organizating, and all exploratory analysis is being completed in Pandas.
 -  **Database Storage:** Our database has been created in PostgreSQL. The sqlalchemy module was utilized to pull in data from our python ETL file to Postgres and from Postgres to our machine learning python file.
 -  **Machine Learning:** SciKitLearn is the ML libary we are using in Python to create our model.
