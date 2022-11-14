@@ -3,8 +3,6 @@
 
 [Slides](https://docs.google.com/presentation/d/1qWWm32a59_d50zv70wdiNtwFNZ0R9fyxviYYN1JGfe0/edit#slide=id.g17df074bfcd_0_1)
 
-[Link to Tableau Dashboard](https://public.tableau.com/views/Capstone_Project_Workbook/FinalStory?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link)
-
 1. **Topic:**
 -   An analysis of pilot survivability from U.S. aircraft combat losses during the Vietnam War.
 2. **Reason this topic was selected:**
@@ -33,8 +31,23 @@ Our raw data was first scraped using the BeautifulSoup library in Pandas.
 - Some quick visuals and count checks were created for the characteristics/fields believed to have the most predictive influence on survivability
 - A major challenge was the incompleteness of some fields within the dataset.
 
-### Initial Exploration Dashboard
+### Data Exploration
+
+**Our Tableau Story:
+[Link to Tableau Dashboard](https://public.tableau.com/views/Capstone_Project_Workbook/FinalStory?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link)
+
 ![Initial_Exploration_Dashboard](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Visualizations/Screenshots/Initial_Exploration_Dashboard.PNG)
+
+### Crash Locations GIF
+![](https://github.com/MichaelG-B/Capstone_Project/blob/079f57a4a71d2260850d1bd086ffb723479870e6/Final_crash_locations_gif.gif)
+
+### Interactive Map of Crash Locations:
+
+An interactive map of crash locations was built using D3 + Leaflet and is embedded into our Tableau story. Users can where users can select a crash location and see key crash info and a picture of the plane involved.
+![Leaflet_Snapshot](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Visualizations/Screenshots/Final_Leaflet_Snapshot.PNG)
+
+Users can also select by year in order to view crashes that occurred during a particular year. The ability to toggle between light and dark map layers has been added as well. This map is also hosted as a webpage on this Github repository. The link is below:
+https://michaelg-b.github.io/Capstone_Project/
 
 ### Description of the analysis phase of the project
 - For our analysis, we asked the question can plane attributes, location and  artillery features be predictive of plane crash fatalities.  
@@ -59,20 +72,7 @@ Description of preliminary feature engineering and preliminary feature selection
 Description of how data was split into training and testing sets
 - We utilized from sklearn.model_selection import train_test_split to split and train the testing sets.
 
-### Dashboard: interactive elements
-- An interactive map where users can select a crash location and see key crash info and a picture of the plane involved.
-- Exploring using Leaflet for this
 
-![Leaflet_Snapshot](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Visualizations/Screenshots/Leaflet_Snapshot.PNG)
-
-### Interactive Map:
-https://michaelg-b.github.io/Capstone_Project/
-
-### Storyboard of Dashboard:
-![Storyboard](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Visualizations/Screenshots/Storyboard.PNG)
-
-### Crash Locations GIF
-![](https://github.com/MichaelG-B/Capstone_Project/blob/079f57a4a71d2260850d1bd086ffb723479870e6/Final_crash_locations_gif.gif)
 
 ### DATABASE
 
