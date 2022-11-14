@@ -15,14 +15,18 @@
 -  **Data Cleaning and Analysis:** All webscraping is being completed using the webscraping library BeautifulSoup. Data cleaning, organizating, and all exploratory analysis is being completed in Pandas.
 -  **Database Storage:** Our database has been created in PostgreSQL. The sqlalchemy module was utilized to pull in data from our python ETL file to Postgres and from Postgres to our machine learning python file.
 -  **Machine Learning:** SciKitLearn is the ML libary we are using in Python to create our model.
--  **Dashboard:** Using Tableau to create a visual story our findings. An interactive map of crash locations was created in D3, Leaflet and is embedded into our Tableau story and hosted as a page on our Github repo.
+-  **Dashboard:** Using Tableau to create a visual story our findings. An interactive map of crash locations was created in D3 + Leaflet and is embedded into our Tableau story and hosted as a page on our Github repo.
 
 
 ![](Capstone%20Project/Visualizations/Project%20Flowchart.png)
 
-### Description of the data exploration phase of the project
-Our raw data was first scraped using the BeautifulSoup library in Pandas.
+### Data Retrieval
+Our raw data was first scraped using the BeautifulSoup library in Pandas. A while loop was used to loop through each individual crash page in Aviation Archaeology and scrape the data found on that page into a single column dataframe.
 
+### Initial Data Cleaning
+The initial dataframe of raw scrapped data was first split into multiple columns. Although there are only 1576 crashes listed on the website, the web Id of the last crash was 1606. This is because some of the webpages were completely blank tables devoid of any data. These resulting blank rows in the data frame were removed.
+
+Additional rows were dropped where no Aircraft Serial Number field (Aircraft_SN) was found.
 - The data pulled from the web needed a lot of work to become useable:
 - Splitting the data into multiple columns
  - Removing rows with missing data
@@ -32,11 +36,9 @@ Our raw data was first scraped using the BeautifulSoup library in Pandas.
 - A major challenge was the incompleteness of some fields within the dataset.
 
 ### Data Exploration
-
-**Our Tableau Story:
+Tableau was utilized to help us visualize our data and better understand what features might contribute towards a machine learning model. Fields pertaining to the mission (ie. base, mission phase, etc.) and the aircraft (ie. aircraft name, ejection seat availability, etc.) were visualized broken down by pilot status.
+**Our Tableau Story:**
 [Link to Tableau Dashboard](https://public.tableau.com/views/Capstone_Project_Workbook/FinalStory?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link)
-
-![Initial_Exploration_Dashboard](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Visualizations/Screenshots/Initial_Exploration_Dashboard.PNG)
 
 ### Crash Locations GIF
 ![](https://github.com/MichaelG-B/Capstone_Project/blob/079f57a4a71d2260850d1bd086ffb723479870e6/Final_crash_locations_gif.gif)
@@ -46,8 +48,7 @@ Our raw data was first scraped using the BeautifulSoup library in Pandas.
 An interactive map of crash locations was built using D3 + Leaflet and is embedded into our Tableau story. Users can where users can select a crash location and see key crash info and a picture of the plane involved.
 ![Leaflet_Snapshot](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Visualizations/Screenshots/Final_Leaflet_Snapshot.PNG)
 
-Users can also select by year in order to view crashes that occurred during a particular year. The ability to toggle between light and dark map layers has been added as well. This map is also hosted as a webpage on this Github repository. The link is below:
-https://michaelg-b.github.io/Capstone_Project/
+Users can also select by year in order to view crashes that occurred during a particular year. The ability to toggle between light and dark map layers has been added as well. This map is also hosted as a webpage on this Github repository. The link is: https://michaelg-b.github.io/Capstone_Project/
 
 ### Description of the analysis phase of the project
 - For our analysis, we asked the question can plane attributes, location and  artillery features be predictive of plane crash fatalities.  
