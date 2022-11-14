@@ -1,7 +1,7 @@
 # Capstone_Project
 ### Project Summary
 
-[Slides](https://docs.google.com/presentation/d/1cWrdK9TxcrMRLa3PUEGzZ5iBkMwag-XfkhOKCQvgmvI/edit#slide=id.p)
+[Slides](https://docs.google.com/presentation/d/1qWWm32a59_d50zv70wdiNtwFNZ0R9fyxviYYN1JGfe0/edit#slide=id.g17df074bfcd_0_1)
 
 [Link to Tableau Dashboard](https://public.tableau.com/views/Capstone_Project_Workbook/FinalStory?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link)
 
