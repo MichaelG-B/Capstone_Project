@@ -99,11 +99,11 @@ After creating a new data frame with the features and target variable to be used
 **Binning/Encoding**
 
 The Summarized_Name (Aircraft name) originally had 26 unique values and we were able to bin name counts less than 18 into 1 category, resulting in 	 11 unique values for this feature. 
-The target variable needed to be converted from the 14 unique values to a binomial:
- - KIA = 0
- - Survived = 1
+The target variable needed to be converted from the 14 unique values to a binomial - KIA = 0 and Survived = 1.
 
 The categorical features: Summarized_Name, Defense_Category, Ejection_Seats and Pilot_Egress were encoded with Scikit-Learn’s OneHotEncoder. 
+
+** After binning these items, the final count was reduced to 847 rows and 30 columns.
 
 Resulting features used for Neural Network:
  - Crash_Year,
@@ -116,8 +116,6 @@ Resulting features used for Neural Network:
 
 Target Variable: 
  - Pilot_Status
-
-** After binning these items, the final count was reduced to 847 rows and 30 columns.
 
 **Processing**
 
