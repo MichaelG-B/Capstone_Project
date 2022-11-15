@@ -93,12 +93,12 @@ The Neural Net test model was created in Google Colaboratory using Scikit-learn 
 
 **Preprocessing Data/Feature Selection**
 
-After creating a new data frame with the features and target variable to be used in this neural network model there were a few features that still needed to be cleaned and transformed. The Crash_Date feature had entirely too many values and I decided to create another column named ‘Crash_Year’ that only pulled the year from the date column. This reduced the amount of unique feature values from 831 to 11. Latitude and Longitude had null values that needed to be removed. Empty string values from the Pilot_Status and Pilot_Egress columns were dropped.
+After creating a new data frame with the features and target variable to be used in this neural network model there were a few features that still needed to be cleaned and transformed. The Crash_Date feature had entirely too many values and it was decided to create another column named ‘Crash_Year’ that only pulled the year from the date column. This reduced the amount of unique feature values from 831 to 11. Latitude and Longitude had null values that needed to be removed. Empty string values from the Pilot_Status and Pilot_Egress columns were dropped.
 ** After this data cleaning there were 1134 rows and 8 columns of usable data.
 
 **Binning/Encoding**
 
-The Summarized_Name (Aircraft name) originally had 26 unique values and I was able to bin name counts less than 18 into 1 category, resulting in 	 11 unique values for this feature. 
+The Summarized_Name (Aircraft name) originally had 26 unique values and we were able to bin name counts less than 18 into 1 category, resulting in 	 11 unique values for this feature. 
 The target variable needed to be converted from the 14 unique values to a binomial:
  - KIA = 0
  - Survived = 1
@@ -131,7 +131,7 @@ Used tensorflow’s Keras module with the Sequential and Dense classes to build 
  - Layer3 – 4 nodes, sigmoid activation function
  - Output Layer – sigmoid activation function
 
-Due to the small amount of data going into the neural network, I kept the model simple and the amount of nodes between the number of input features (29) and output features (1). The sigmoid activation function was used in the output layer because our question is asking for a probability of pilot survival. The relu activation functions in the first two layers and the sigmoid activation function in the third layer gave me the best accuracy and loss scores through many trial and error runs. This model was trained on 100 epochs and used the ‘adam’ optimizer and ‘binary crossentropy’ for loss. The metric tested was ‘accuracy’. 
+Due to the small amount of data going into the neural network, we kept the model simple and the amount of nodes between the number of input features (29) and output features (1). The sigmoid activation function was used in the output layer because our question is asking for a probability of pilot survival. The relu activation functions in the first two layers and the sigmoid activation function in the third layer gave me the best accuracy and loss scores through many trial and error runs. This model was trained on 100 epochs and used the ‘adam’ optimizer and ‘binary crossentropy’ for loss. The metric tested was ‘accuracy’. 
 
 **Accuracy Results**
  - Accuracy resulted in 66.51% 
