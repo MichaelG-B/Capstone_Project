@@ -86,6 +86,8 @@ With the additional data cleaning and features additions, accuracy imporved from
 
 We utilized from sklearn.model_selection import train_test_split to split and train the testing sets.
 
+**Neural Network Test Practice - Clara to add**
+
 ### Contributors
 
 Thanks to the following people who have contributed to this project:
