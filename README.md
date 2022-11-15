@@ -34,29 +34,9 @@ Our raw data was first scraped using the BeautifulSoup library in Pandas. A whil
 ### Initial Data Cleaning
 The initial dataframe of raw scrapped data was first split into multiple columns. Although there are only 1576 crashes listed on the website, the web Id of the last crash was 1606. This is because some of the webpages were completely blank tables devoid of any data. These resulting blank rows in the data frame were removed.
 
-Additional rows were dropped where no Aircraft Serial Number field (Aircraft_SN) was found.
-- The data pulled from the web needed a lot of work to become useable:
-- Splitting the data into multiple columns
- - Removing rows with missing data
- - Converting certain string fields to integers, datetime
- - Converting location data into decimal degrees format
-- Some quick visuals and count checks were created for the characteristics/fields believed to have the most predictive influence on survivability
-- A major challenge was the incompleteness of some fields within the dataset.
+Rows with no Aircraft Serial Number (Aircraft_SN) were also dropped. Many of these rows with no unique crash identifier also had a lot of other missing data. This brought the dataframe down from 1576 crashes to 1540. 
 
-### Data Exploration
-Tableau was utilized to help us visualize our data and better understand what features might contribute towards a machine learning model. Fields pertaining to the mission (ie. base, mission phase, etc.) and the aircraft (ie. aircraft name, ejection seat availability, etc.) were visualized broken down by pilot status.
-**Our Tableau Story:**
-[Link to Tableau Dashboard](https://public.tableau.com/views/Capstone_Project_Workbook/FinalStory?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link)
-
-### Crash Locations GIF
-![](https://github.com/MichaelG-B/Capstone_Project/blob/079f57a4a71d2260850d1bd086ffb723479870e6/Final_crash_locations_gif.gif)
-
-### Interactive Map of Crash Locations:
-
-An interactive map of crash locations was built using D3 + Leaflet and is embedded into our Tableau story. Users can where users can select a crash location and see key crash info and a picture of the plane involved.
-![Leaflet_Snapshot](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Visualizations/Screenshots/Final_Leaflet_Snapshot.PNG)
-
-Users can also select by year in order to view crashes that occurred during a particular year. The ability to toggle between light and dark map layers has been added as well. This map is also hosted as a webpage on this Github repository. The link is: https://michaelg-b.github.io/Capstone_Project/
+Data type conversion was needed for some of the fields. A few like Altitude and Airspeed were converted to integer format. Crash Date was changed to datateime. Coordinates of crash locations needed to be converted from decimal, minutes, and seconds format to decimal degrees (DD) format. This was done by breaking the original lat/long strings into their respective degrees and minutes, converting to numeric, and then using the following formula: DD = Degrees + (Minutes/60) + (Seconds/3600).
 
 ### DATABASE
 
@@ -71,6 +51,19 @@ Users can also select by year in order to view crashes that occurred during a pa
 - Database stores static data in the form of 9 tables in the database. The initial table brought in from the ETL file, usaf_table. These tables store data for the visualizations and machine learning model to connect to.
 
 - Database interfaces with the project through the connection from the ETL file to Postgres. It also connects to the machine learning model, visualizations and will eventually connect to the final accuracy table from the machine learning model.
+
+### Data Exploration
+Tableau was utilized to help us visualize our data and better understand what features might contribute towards a machine learning model. It can be found here: [Link to Dashboard](https://public.tableau.com/views/Capstone_Project_Workbook/FinalStory?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link). 
+Fields pertaining to the mission (ie. base, mission phase, etc.) and the aircraft (ie. aircraft name, ejection seat availability, etc.) were visualized. Pilot status was used as a color marker to reveal the breakdown between KIA and survived for each of these fields. Some of the terms found in this dashboard may not be familiar to many readers. A list of these key terms: **KIA - Killed in Action**, **MIA - Missing in Action**, **POW - Prisoner of War**, **SAM - Surface-to-Air Missile**, **AAA - Anti-Aircraft Artillery**, **MIG - Soviet-built fighter aircraft**
+
+![](https://github.com/MichaelG-B/Capstone_Project/blob/079f57a4a71d2260850d1bd086ffb723479870e6/Final_crash_locations_gif.gif)
+
+#### Interactive Map of Crash Locations:
+A simple map of KIA crashes in red and survived in blue was created in Tableau and shown in the gif above. The ability to map crash locations presented an interesting opportunity to build a map with user interactivity. As such, an interactive map was built using D3.js + Leaflet and is embedded into our Tableau story. Users can where users can select a crash location and see key crash info and a picture of the plane involved. Users can also select by year in order to view crashes that occurred during a particular year. The ability to toggle between light and dark map layers has been added as well. This map is also hosted as a webpage on this Github repository. The link is: https://michaelg-b.github.io/Capstone_Project/
+
+#### Map Snapshot:
+![Leaflet_Snapshot](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Visualizations/Screenshots/Final_Leaflet_Snapshot.PNG)
+
 
 ### Description of the ML analysis phase of the project
 
