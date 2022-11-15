@@ -50,9 +50,10 @@ An interactive map of crash locations was built using D3 + Leaflet and is embedd
 
 Users can also select by year in order to view crashes that occurred during a particular year. The ability to toggle between light and dark map layers has been added as well. This map is also hosted as a webpage on this Github repository. The link is: https://michaelg-b.github.io/Capstone_Project/
 
-**Machine Learning:** SciKitLearn and Imblarn Ensemble are the ML libraries we are using in Python to create our model.
 
-### Description of the analysis phase of the project
+### Description of the ML analysis phase of the project
+
+**Machine Learning:** SciKitLearn and Imblarn Ensemble are the ML libraries we are using in Python to create our model.
 
 **Description of preliminary data preprocessing**
 
