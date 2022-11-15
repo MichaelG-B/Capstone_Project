@@ -50,6 +50,19 @@ An interactive map of crash locations was built using D3 + Leaflet and is embedd
 
 Users can also select by year in order to view crashes that occurred during a particular year. The ability to toggle between light and dark map layers has been added as well. This map is also hosted as a webpage on this Github repository. The link is: https://michaelg-b.github.io/Capstone_Project/
 
+### DATABASE
+
+- ERD
+![ERD_AllTables](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Database/ERD_AllTables.png)
+
+- The database includes two separate inner joins that create two tables, aircraft_table and usaf_defense that are then joined to create the final table, usaf_defense.
+
+- Postgres connection string
+![SQLAlchemy_Conn](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Database/SQLAlchemy_Conn.png)
+
+- Database stores static data in the form of 9 tables in the database. The initial table brought in from the ETL file, usaf_table. These tables store data for the visualizations and machine learning model to connect to.
+
+- Database interfaces with the project through the connection from the ETL file to Postgres. It also connects to the machine learning model, visualizations and will eventually connect to the final accuracy table from the machine learning model.
 
 ### Description of the ML analysis phase of the project
 
@@ -72,20 +85,6 @@ With the additional data cleaning and features additions, accuracy imporved from
 **Description of how data was split into training and testing sets**
 
 We utilized from sklearn.model_selection import train_test_split to split and train the testing sets.
-
-### DATABASE
-
-- ERD
-![ERD_AllTables](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Database/ERD_AllTables.png)
-
-- The database includes two separate inner joins that create two tables, aircraft_table and usaf_defense that are then joined to create the final table, usaf_defense.
-
-- Postgres connection string
-![SQLAlchemy_Conn](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Database/SQLAlchemy_Conn.png)
-
-- Database stores static data in the form of 9 tables in the database. The initial table brought in from the ETL file, usaf_table. These tables store data for the visualizations and machine learning model to connect to.
-
-- Database interfaces with the project through the connection from the ETL file to Postgres. It also connects to the machine learning model, visualizations and will eventually connect to the final accuracy table from the machine learning model.
 
 ### Contributors
 
