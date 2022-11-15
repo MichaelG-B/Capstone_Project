@@ -130,11 +130,13 @@ Used tensorflow’s Keras module with the Sequential and Dense classes to build 
  - Layer2 – 3 nodes, relu activation function
  - Layer3 – 4 nodes, sigmoid activation function
  - Output Layer – sigmoid activation function
+
 Due to the small amount of data going into the neural network, I kept the model simple and the amount of nodes between the number of input features (29) and output features (1). The sigmoid activation function was used in the output layer because our question is asking for a probability of pilot survival. The relu activation functions in the first two layers and the sigmoid activation function in the third layer gave me the best accuracy and loss scores through many trial and error runs. This model was trained on 100 epochs and used the ‘adam’ optimizer and ‘binary crossentropy’ for loss. The metric tested was ‘accuracy’. 
 
 **Accuracy Results**
  - Accuracy resulted in 66.51% 
  - Loss resulted in 64.1%
+
 These scores are mediocre in predicting the survivability of the pilot in a combat aircraft crash during the Vietnam War. Considering the question, it is not as important to have an extremely high accuracy score here, but it would have shown success in the neural network model if the score was over 75%. The loss is still fairly high here as well.
 
 **Conclusions**
