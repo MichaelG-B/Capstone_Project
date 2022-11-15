@@ -50,30 +50,27 @@ An interactive map of crash locations was built using D3 + Leaflet and is embedd
 
 Users can also select by year in order to view crashes that occurred during a particular year. The ability to toggle between light and dark map layers has been added as well. This map is also hosted as a webpage on this Github repository. The link is: https://michaelg-b.github.io/Capstone_Project/
 
+**Machine Learning:** SciKitLearn and Imblarn Ensemble are the ML libraries we are using in Python to create our model.
+
 ### Description of the analysis phase of the project
-- For our analysis, we asked the question can plane attributes, location and  artillery features be predictive of plane crash fatalities.  
-Utilizing web scraping, the total population of plane crashes during the Vietnam War was collected.  
-	- Our question, lends itself to supervised ML models meant to predict outcomes, such as logistic regression and ensemble models.
-	
-Description of preliminary data preprocessing
 
-- Prior to running the ML model rows containing nulls and rows containing null values that were strings were removed.
-- During our analysis phase all supervised ml models and learned sampling techniques from class were tested. In our initial draft Random Forest models yielded the highest accuracy.  
+**Description of preliminary data preprocessing**
 
-Description of preliminary feature engineering and preliminary feature selection, including their decision-making process?
+Prior to running the ML model rows containing nulls and rows containing null string values were removed.  Additionally are categorical variables were dummy coded. 
 
-- Further refinements included, the addition of new variables from our database, “Ejection Seat (Y/N)”, bucketed aircraft types and defense types, and Latitude and Longitude. These changes reduced the amount of encoded features.  
-- This is important as one limiting factor for our analysis, is that it heavily relies on categorical variables which may limit the power of our model.  
+During our analysis phase all supervised ml models and learned sampling techniques from class were tested. In our initial draft our Random Forest model yielded the highest accuracy, thus this model was chosen for further refinment.   
 
-- With the addition of Latitude and Longitude other geographic variables such as “Base Name”  and “Mission Phase” were removed due to there duplicative nature. Moreover Lat and Lon were preferred due to their integer data type. 
-- With the additional data cleaning and features our ML model improved accuracy from 60% (Draft) to 84%.
+**Description of preliminary feature engineering and preliminary feature selection, including their decision-making process?**
 
-- We started off with Seven features which we later encoded to create 45 features
+To refine and engineer our features supplemental datasets containing variables such as “normalized” aircraft types, “normalized” defense types, Ejection Seats (Y/N) and Pilot Egress (how they exited the plane) were added. Lastly, our location type variables Base and Mission Phase were dropped in favor of numeric data for longitude and latitude. These changes reduced the amount of encoded features.
 
-Description of how data was split into training and testing sets
-- We utilized from sklearn.model_selection import train_test_split to split and train the testing sets.
+Feature selection was a result of multiple accuracy tests.  Dummy coding lead to the use 47 columns in the model versus the initial 7. This limited our ability to use a correlation matrix to identify features.  Lastly, feature selection was limited because of the size of the data set and the amount of null values. 
 
+With the additional data cleaning and features additions, accuracy imporved from **60%** to **84%**.
 
+**Description of how data was split into training and testing sets**
+
+We utilized from sklearn.model_selection import train_test_split to split and train the testing sets.
 
 ### DATABASE
 
@@ -134,31 +131,6 @@ Accomplishments and goals moving forward-
 - Redesigned initial Tableau dashboard to be a more complete and improved visual story
 - Worked with Clara and Michael to build our interactive map with D3 + Leaflet
 - Collaborated with Samuel to determine best way to visualize the ML results in Tableau
-
-
-# Updates to ML Sections based on final rubric requirments
-
-**Machine Learning:** SciKitLearn and Imblarn Ensemble are the ML libraries we are using in Python to create our model.
-
-### Description of the analysis phase of the project
-
-**Description of preliminary data preprocessing**
-
-Prior to running the ML model rows containing nulls and rows containing null string values were removed.  Additionally are categorical variables were dummy coded. 
-
-During our analysis phase all supervised ml models and learned sampling techniques from class were tested. In our initial draft our Random Forest model yielded the highest accuracy, thus this model was chosen for further refinment.   
-
-**Description of preliminary feature engineering and preliminary feature selection, including their decision-making process?**
-
-To refine and engineer our features supplemental datasets containing variables such as “normalized” aircraft types, “normalized” defense types, Ejection Seats (Y/N) and Pilot Egress (how they exited the plane) were added. Lastly, our location type variables Base and Mission Phase were dropped in favor of numeric data for longitude and latitude. These changes reduced the amount of encoded features.
-
-Feature selection was a result of multiple accuracy tests.  Dummy coding lead to the use 47 columns in the model versus the initial 7. This limited our ability to use a correlation matrix to identify features.  Lastly, feature selection was limited because of the size of the data set and the amount of null values. 
-
-With the additional data cleaning and features additions, accuracy imporved from **60%** to **84%**.
-
-**Description of how data was split into training and testing sets**
-
-We utilized from sklearn.model_selection import train_test_split to split and train the testing sets.
 
 ### Samuel Boester - Triangle 
 #### Initial Draft
