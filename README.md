@@ -1,4 +1,4 @@
-# Capstone_Project
+# Vietnam War Plane Crash Survivability
 ### Project Summary
 
 [Slides](https://docs.google.com/presentation/d/1qWWm32a59_d50zv70wdiNtwFNZ0R9fyxviYYN1JGfe0/edit#slide=id.g17df074bfcd_0_1)
