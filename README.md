@@ -7,8 +7,8 @@
 An analysis of pilot survivability from U.S. aircraft combat losses during the Vietnam War.
 ### **Reason this topic was selected**
 As a team we selected this topic because of our shared interest in historical events as well as the nature of the dataset itself. Our data sources provided many features we thought would make for an interesting story once we applied machine learning; notably key characteristics that have potential for influencing pilot survivability. We believe the challenges of analyzing this dataset give us the chance to showcase many of the skills we have learned throughout the course.
-### **Description of our source of data**
-Our data sources are two websites dedicated to military aviation research, those being (https://www.aviationarchaeology.com/index.asp) and (https://www.vietnamairlosses.com/index.php). Each provided data on aircraft losses, such as crash date, pilot status, base, aircraft type, etc. However, our initial ML model is working solely off of aviationarchaeology.com since there is a more complete picture of the crash characteristics on this page. All data used was obtained through the use of web scraping techniques. 
+### **Data Source Description**
+A website dedicated to aviation research, (https://www.aviationarchaeology.com/index.asp), which contains a searchable database of 1,576 U.S. Air Force combat-related losses during the Vietnam War. This website is the creation of Craig Fuller of the Aviation Archaeological Investigation & Research (AAIR) organization. Some additional research was also conducted on (https://www.vietnamairlosses.com/index.php) to add some context to the data scraped from Aviation Archaeology. All data pulled from these websites was obtained through the use of web scraping techniques. 
 ### **Questions we hope to answer with the data**
 Can looking at the characteristics of each warplane crash predict whether or not the pilot survived the crash. Our ML model will seek to predict whether a pilot survived or was killed based on particular crash features like aircraft type or what armament hit the plane, for example.
 ### **Technologies Used**
@@ -36,7 +36,7 @@ The initial dataframe of raw scrapped data was first split into multiple columns
 
 Rows with no Aircraft Serial Number (Aircraft_SN) were also dropped. Many of these rows with no unique crash identifier also had a lot of other missing data. This brought the dataframe down from 1576 crashes to 1540. 
 
-Data type conversion was needed for some of the fields. A few like Altitude and Airspeed were converted to integer format. Crash Date was changed to datateime. Coordinates of crash locations needed to be converted from decimal, minutes, and seconds format to decimal degrees (DD) format. This was done by breaking the original lat/long strings into their respective degrees and minutes, converting to numeric, and then using the following formula: DD = Degrees + (Minutes/60) + (Seconds/3600).
+Data type conversion was needed for some of the fields. A few like Altitude and Airspeed were converted to integer format. Crash Date was changed to datetime. Coordinates of crash locations needed to be converted from decimal, minutes, and seconds format to decimal degrees (DD) format. This was done by breaking the original lat/long strings into their respective degrees and minutes, converting to numeric, and then using the following formula: DD = Degrees + (Minutes/60) + (Seconds/3600).
 
 ### DATABASE
 
@@ -59,7 +59,7 @@ Fields pertaining to the mission (ie. base, mission phase, etc.) and the aircraf
 ![](https://github.com/MichaelG-B/Capstone_Project/blob/079f57a4a71d2260850d1bd086ffb723479870e6/Final_crash_locations_gif.gif)
 
 #### Interactive Map of Crash Locations:
-A simple map of KIA crashes in red and survived in blue was created in Tableau and shown in the gif above. The ability to map crash locations presented an interesting opportunity to build a map with user interactivity. As such, an interactive map was built using D3.js + Leaflet and is embedded into our Tableau story. Users can where users can select a crash location and see key crash info and a picture of the plane involved. Users can also select by year in order to view crashes that occurred during a particular year. The ability to toggle between light and dark map layers has been added as well. This map is also hosted as a webpage on this Github repository. The link is: https://michaelg-b.github.io/Capstone_Project/
+A simple map of KIA crashes in red and survived in blue was created in Tableau and shown in the gif above. The ability to map crash locations presented an interesting opportunity to build a map with user interactivity. As such, an interactive map was built using D3.js in conjunction with Leaflet and is embedded into our Tableau story. Users can where users can select a crash location and see key crash info and a picture of the plane involved. Users can also select by year in order to view crashes that occurred during a particular year. The ability to toggle between light and dark map layers has been added as well. This map is also hosted as a webpage on this Github repository. The link is: https://michaelg-b.github.io/Capstone_Project/
 
 #### Map Snapshot:
 ![Leaflet_Snapshot](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Visualizations/Screenshots/Final_Leaflet_Snapshot.PNG)
