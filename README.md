@@ -14,7 +14,7 @@ Can looking at the characteristics of each warplane crash predict whether or not
 ### **Technologies Used**
 - Python
 - Tableau
-- stgres
+- Postgres
 - D3 & Leaflet
 ### **Data Cleaning and Analysis** 
 All webscraping is being completed using the webscraping library BeautifulSoup. Data cleaning, organizating, and all exploratory analysis is being completed in Pandas.
