@@ -156,21 +156,6 @@ Thanks to the following people who have contributed to this project:
 
 
 ## Segment 3
-Accomplishments and goals moving forward-
-
-### Clara Potts – Circle Role
-
-- Worked with Ben and Michael on the Interactive Map:
-	- Created table in Postgres to export and merge with supplementary data to create the geoJSON file used in the interactive map
-	- Worked on multiple formatting issues within the map
-
-- Finished the Neural Net test Model
-	- Preprocessed data to reflect same features as main ML model
-	- Cleaned data - removing nulls
-	- Binned and transformed data to condense number of unique values per features and target variable
-	- Built neural net and optimized
-
-- Updated and maintained Schema.sql file with the SQL code for the new table created for geoJSON file. 
 
 ### Michael Beyer - Square Role
 
