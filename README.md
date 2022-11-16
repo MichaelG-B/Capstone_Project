@@ -37,6 +37,7 @@ The initial dataframe of raw scrapped data was first split into multiple columns
 Rows with no Aircraft Serial Number (Aircraft_SN) were also dropped. Many of these rows with no unique crash identifier also had a lot of other missing data. This brought the dataframe down from 1576 crashes to 1540. 
 
 Data type conversion was needed for some of the fields. A few like Altitude and Airspeed were converted to integer format. Crash Date was changed to datetime. Coordinates of crash locations needed to be converted from decimal, minutes, and seconds format to decimal degrees (DD) format. This was done by breaking the original lat/long strings into their respective degrees and minutes, converting to numeric, and then using the following formula: DD = Degrees + (Minutes/60) + (Seconds/3600).
+The converted coordinate data was also added to a separate dataframe along with a few other crash characteristic fields for use in our interactive map. This geo map dataframe was exported into a csv file that was then converted to geoJSON format using an open source tool found at (https://open-innovations.github.io/CSVGeoJSON/).
 
 ### DATABASE
 
