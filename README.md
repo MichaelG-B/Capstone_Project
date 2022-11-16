@@ -37,18 +37,18 @@ The initial dataframe of raw scrapped data was first split into multiple columns
 Rows with no Aircraft Serial Number (Aircraft_SN) were also dropped. Many of these rows with no unique crash identifier also had a lot of other missing data. This brought the dataframe down from 1576 crashes to 1540. 
 
 Data type conversion was needed for some of the fields. A few like Altitude and Airspeed were converted to integer format. Crash Date was changed to datetime. Coordinates of crash locations needed to be converted from decimal, minutes, and seconds format to decimal degrees (DD) format. This was done by breaking the original lat/long strings into their respective degrees and minutes, converting to numeric, and then using the following formula: DD = Degrees + (Minutes/60) + (Seconds/3600).
-The converted coordinate data was also added to a separate dataframe along with a few other crash characteristic fields for use in our interactive map. This geo map dataframe was exported into a csv file that was then converted to geoJSON format using an open source tool found at (https://open-innovations.github.io/CSVGeoJSON/).
+The converted coordinate data was also added to a separate dataframe along with a few other crash characteristic fields for use in our interactive map. This geo map dataframe was exported into a csv file that was then converted to geoJSON format using an open source tool found at (https://open-innovations.github.io/CSV2GeoJSON/).
 
 ### DATABASE
 
 PostgreSQL was used to store and further transform data for ease of use in creating visualizations and the machine learning model. The original table, usaf_table, was brought into Postgres using SQLAlchemy from the Vietnam_Losses_ETL file. This initial table was used as the basis for the supplementary tables and to create our final table. 
 
-The database stores static data in the form of 11 tables. These tables include the original usaf_table brought in from the python ETL file, five supplementary data tables, three tables that were created through joins and one table that was generated solely to build the geojson file for the interactive map. The final table holds the results of the machine learning model.
+The database stores static data in the form of 11 tables. These tables include the original usaf_table brought in from the python ETL file, five supplementary data tables, three tables that were created through joins, and one table that was generated solely to build the geojson file for the interactive map. The final table holds the results of the machine learning model.
 
 - ERD
 ![ERD_AllTables](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Database/ERD_AllTables.png)
 
-Supplementary tables were created to expand on or clean the data from the original usaf_table. Through additional research from www.vietnamairlosses.com, wikipedia and various other sources, the team created and imported csv files into the following postgres tables: aircraft_information, base_table, loss_locations_table, country_table, and defense_type tables. The aircraft_information table expanded the abbreviated 'Aircraft Type' feature to include full aircraft name and summarized name as well as added an ejection seat feature. Base_table and country_table both expanded on abbreviated data by including full country names and complete base names along with the latitude and longitude of each base. The defense_type table was created to clean and categorize the multitude of values in the original 'Defense Type' feature. Finally, the loss_locations_table was produced with cleaned and converted (to decimal degrees) latitude and longitude data.
+Supplementary tables were created to expand on or clean the data from the original usaf_table. Through additional research from www.vietnamairlosses.com, wikipedia, and various other sources, the team created and imported csv files into the following postgres tables: aircraft_information, base_table, loss_locations_table, country_table, and defense_type tables. The aircraft_information table expanded the abbreviated 'Aircraft Type' feature to include full aircraft name and summarized name as well as added an ejection seat feature. Base_table and country_table both expanded on abbreviated data by including full country names and complete base names along with the latitude and longitude of each base. The defense_type table was created to clean and categorize the multitude of values in the original 'Defense Type' feature. Finally, the loss_locations_table was produced with cleaned and converted (to decimal degrees) latitude and longitude data.
 
 The database includes three separate joins that were steps in the process to generate our final table, usaf_coomplete. The first join created the aircraft_table and connected the original usaf_table with the supplementary aircraft_information table in order to update the unique aircraft serial number to include 'full_name' and 'summarized_name' of each aircraft type as well as ejection seat status. The second join generated the usaf_defense table by uniting our original table with the supplementary defense_type table so that each aircraft serial number would contain the new categorized defense type. The final join produced the ultimate usaf_complete table by connecting the newly made aircraft_table with the newly made usaf_defense table. The final usaf_complete table encompassed expanded and supplemental data into a clean and straightforward table to be used by the machine learning model and visualizations. 
 
@@ -61,7 +61,7 @@ Fields pertaining to the mission (ie. base, mission phase, etc.) and the aircraf
 ![](https://github.com/MichaelG-B/Capstone_Project/blob/079f57a4a71d2260850d1bd086ffb723479870e6/Final_crash_locations_gif.gif)
 
 #### Interactive Map of Crash Locations:
-A simple map of KIA crashes in red and survived in blue was created in Tableau and shown in the gif above. The ability to map crash locations presented an interesting opportunity to build a map with user interactivity. As such, an interactive map was built using D3.js in conjunction with Leaflet and is embedded into our Tableau story. Users can where users can select a crash location and see key crash info and a picture of the plane involved. Users can also select by year in order to view crashes that occurred during a particular year. The ability to toggle between light and dark map layers has been added as well. This map is also hosted as a webpage on this Github repository. The link is: https://michaelg-b.github.io/Capstone_Project/
+A simple map of KIA crashes in red and survived in blue was initially created in Tableau and shown in the gif above. The ability to map crash locations presented an interesting opportunity to build a map with user interactivity. As such, an interactive map was built using D3.js in conjunction with Leaflet and is embedded into our Tableau story. Users can where users can select a crash location and see key crash info and a picture of the plane involved. Users can also select by year in order to view crashes that occurred during a particular year. The ability to toggle between light and dark map layers has been added as well. This map is also hosted as a webpage on this Github repository. The link is: https://michaelg-b.github.io/Capstone_Project/
 
 #### Map Snapshot:
 ![Leaflet_Snapshot](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Visualizations/Screenshots/Final_Leaflet_Snapshot.PNG)
@@ -168,13 +168,6 @@ Thanks to the following people who have contributed to this project:
 - Updated and managed our projects github repository in order to keep a clean working repository
 
 - Helped team members with issues/problems that arose with Github
-
-
-### Ben Fox - X Role
-
-- Redesigned initial Tableau dashboard to be a more complete and improved visual story
-- Worked with Clara and Michael to build our interactive map with D3 + Leaflet
-- Collaborated with Samuel to determine best way to visualize the ML results in Tableau
 
 ### Samuel Boester - Triangle 
 #### Initial Draft
