@@ -41,17 +41,18 @@ The converted coordinate data was also added to a separate dataframe along with 
 
 ### DATABASE
 
+PostgreSQL was used to store and further transform data for ease of use in creating visualizations and the machine learning model. The original table, usaf_table, was brought into Postgres using SQLAlchemy from the Vietnam_Losses_ETL file. This initial table was used as the basis for supplementary tables and to create our final table. 
+
+The database stores static data in the form of 11 tables. These tables include the original usaf_table brought in from the python ETL file, five supplementary data tables, three tables that were created through joins and one table that was created strictly to build the geojson file for the interactive map. The final table holds the results of the machine learning model.
+
 - ERD
 ![ERD_AllTables](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Database/ERD_AllTables.png)
 
-- The database includes two separate inner joins that create two tables, aircraft_table and usaf_defense that are then joined to create the final table, usaf_defense.
+Supplementary tables were created to expand on or clean the data from the original usaf_table. Through additional research from www.vietnamairlosses.com, wikipedia and various other sources, the team created and imported csv files into the following postgres tables: aircraft_information, base_table, loss_locations_table, country_table, and defense_type tables. The aircraft_information table expanded the abbreviated 'Aircraft Type' feature to include full aircraft name and summarized name as well as added an ejection seat feature. Base_table and country_table both expanded on abbreviated data by including full country names and base names along with the latitude and longitude of each base. The defense_type table was created to clean and categorize the multitude of values in the original 'Defense Type' feature. The final table, loss_locations_table cleaned and converted latitude and longitude of crash location to decimal degrees. 
 
-- Postgres connection string
-![SQLAlchemy_Conn](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Database/SQLAlchemy_Conn.png)
+The database includes three separate joins that were steps in the process to generate our final table, usaf_coomplete. The first join created the aircraft_table and connected the original usaf_table with the supplementary aircraft_information table in order to update the unique aircraft serial number to include 'full_name' and 'summarized_name' of each aircraft type as well as ejection seat status. The second join generated the usaf_defense table by uniting our original table with the supplementary defense_type table so that each aircraft serial number would contain the new categorized defense type. The final join produced the ultimate usaf_complete table by connecting the newly made aircraft_table with the newly made usaf_defense table. The final usaf_complete table encompassed expanded and supplemental data into a clean and straightforward table to be used by the machine learning model and visualizations. 
 
-- Database stores static data in the form of 9 tables in the database. The initial table brought in from the ETL file, usaf_table. These tables store data for the visualizations and machine learning model to connect to.
-
-- Database interfaces with the project through the connection from the ETL file to Postgres. It also connects to the machine learning model, visualizations and will eventually connect to the final accuracy table from the machine learning model.
+- Database interfaces with the project through the SQLAlchemy connection from the ETL file to Postgres. Postgres database is also interfaced with the machine learning model and visualizations. The results of the machine learning model are also connected back to Postgres using SQLAlchemy.
 
 ### Data Exploration
 Tableau was utilized to help us visualize our data and better understand what features might contribute towards a machine learning model. It can be found here: [Link to Dashboard](https://public.tableau.com/views/Capstone_Project_Workbook/FinalStory?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link). 
@@ -88,7 +89,7 @@ With the additional data cleaning and features additions, accuracy imporved from
 
 We utilized from sklearn.model_selection import train_test_split to split and train the testing sets.
 
-**Neural Network Test Practice**
+### Neural Network Test Model
 
 The Neural Net test model was created in Google Colaboratory using Scikit-learn framework, tensorflow and pandas libraries. 
 
