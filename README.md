@@ -45,7 +45,7 @@ PostgreSQL was used to store and further transform data for ease of use in creat
 
 The database stores static data in the form of 11 tables. These tables include the original *usaf_table* brought in from the python ETL file, five supplementary data tables, three tables that were created through joins, and one table that was generated solely to build the geojson file for the interactive map. The final table holds the results of the machine learning model.
 
-- ERD
+### ERD
 ![ERD_AllTables](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Database/ERD_AllTables.png)
 
 Supplementary tables were created to expand on or clean the data from the original *usaf_table*. Through additional research from www.vietnamairlosses.com, wikipedia, and various other sources, the team created and imported csv files into the following postgres tables: *aircraft_information*, *base_table*, *loss_locations_table*, *country_table*, and *defense_type* tables. The *aircraft_information* table expanded the abbreviated 'Aircraft Type' feature to include full aircraft name and summarized name as well as added an ejection seat feature. *Base_table* and *country_table* both expanded on abbreviated data by including full country names and complete base names along with the latitude and longitude of each base. The *defense_type* table was created to clean and categorize the multitude of values in the original 'Defense Type' feature. Finally, the *loss_locations_table* was produced with cleaned and converted (to decimal degrees) latitude and longitude data.
