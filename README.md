@@ -67,27 +67,26 @@ A simple map of KIA crashes in red and survived in blue was initially created in
 ![Leaflet_Snapshot](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Visualizations/Screenshots/Final_Leaflet_Snapshot.PNG)
 
 
-### Description of the ML analysis phase of the project
+### ML Analysis
+After our data exploration phase and a general idea of what features we would select for testing, several supervised models were tested to answer our question:
 
-**Machine Learning:** SciKitLearn and Imblarn Ensemble are the ML libraries we are using in Python to create our model.
+"Can pilot survivability be predicted with military data such as plan type, location data (Base, Mission Phase, Lat/Lon), defense type (artillery used to down the plan), and aircraft features (ejection seat Y/N)?" 
 
-**Description of preliminary data preprocessing**
+#### Pre-Processing
+To preserve data in Postgres, we decided to conduct some final pre-processing in our ML script.  Our pre-processing included removal of nulls and string values such as "_".  Our binomial target variable, "Survived” was created through mapping Pilot_Status to either a 0 or 1, with 1 indicating pilot survival. Lastly, we dummy coded all categorical variables and scaled our data using StandardScaler.  
 
-Prior to running the ML model rows containing nulls and rows containing null string values were removed.  Additionally are categorical variables were dummy coded. 
+#### Feature Selection and Initial Model Testing 
+Feature selection was limited due to the number of nulls in the dataset.  Moreover, many variables were categorical requiring dummy coding and generated 44 columns.  As a result, we did not use a correlation matrix to select features, and rather used Tableau to gain a general idea of what variables to test.  The models that were tested included: Decision Tree, Random Forest, and Multi-Logistic Regression with multiple sampling techniques.  After testing different features, we selected Aircraft_type, Mission_Phase, Base, Defense_Category. All models were trained and split using Sklearn, but did not require balancing since our target variable was fairly balanced (Survived = 732 vs Did Not Survive = 402). In our initial tests, the Random Forrest model out preformed all other models with an accuracy score 60% vs 55% from all other models.  
 
-During our analysis phase all supervised ml models and learned sampling techniques from class were tested. In our initial draft our Random Forest model yielded the highest accuracy, thus this model was chosen for further refinment.   
+#### Refinement and Final Model
+To improve our initial Random Forest model, new features were added from supplemental datasets such “summarized” aircraft types, “summarized” defense types, Ejection Seats (Y/N) and Pilot Egress (how they exited the plane). Lastly, our location type variables Base and Mission_Phase were dropped in favor of numeric longitude and latitude data. With the addition of these variables the model's accuracy improved from **60%** to **84%**.
 
-**Description of preliminary feature engineering and preliminary feature selection, including their decision-making process?**
+#### Confusion Matrix
+The below confusion matrix was created with the package Seaborn.  This package allows us to clearly identify the true positive/negative and false positive/negative percentages of our total predictions.  We can easily see that TP and TF predictions equate to our model's accuracy score of 84%.  Despite the limitations of our data (nulls, available features, and mainly categorical variables), we believe our model preformed quite well and answers the question... **Yes** plane, defense, and location variables were indeed able to predict survivability during the Vietnam War. 
+ 
+![](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Machine%20Learning/resources/cm_heatmap.png)
 
-To refine and engineer our features supplemental datasets containing variables such as “normalized” aircraft types, “normalized” defense types, Ejection Seats (Y/N) and Pilot Egress (how they exited the plane) were added. Lastly, our location type variables Base and Mission Phase were dropped in favor of numeric data for longitude and latitude. These changes reduced the amount of encoded features.
-
-Feature selection was a result of multiple accuracy tests.  Dummy coding lead to the use 47 columns in the model versus the initial 7. This limited our ability to use a correlation matrix to identify features.  Lastly, feature selection was limited because of the size of the data set and the amount of null values. 
-
-With the additional data cleaning and features additions, accuracy improved from **60%** to **84%**.
-
-**Description of how data was split into training and testing sets**
-
-We utilized from sklearn.model_selection import train_test_split to split and train the testing sets.
+*As an addition, the team wanted to experiment with nueral networks, however this model was not chosen.  Please see our below nueral network test.*  
 
 ### Neural Network Test Model
 A neural network test model was created in an effort to identify the most effective machine learning model for this project. The small amount of data was a concern while creating this model but we needed confirmation for ruling out the neural network for use in this case. 
