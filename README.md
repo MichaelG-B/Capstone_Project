@@ -70,7 +70,7 @@ A simple map of KIA crashes in red and survived in blue was initially created in
 ### ML Analysis
 After our data exploration phase and a general idea of what features we would select for testing, several supervised models were tested to answer our question:
 
-"Can pilot survivability be predicted with military data such as plan type, location data (Base, Mission Phase, Lat/Lon), defense type (artillery used to down the plan), and aircraft features (ejection seat Y/N)?" 
+"Can pilot survivability be predicted with military data such as plane type, location data (Base, Mission Phase, Lat/Lon), defense type (artillery used to down the plan), and aircraft features (ejection seat Y/N)?" 
 
 #### Pre-Processing
 To preserve data in Postgres, we decided to conduct some final pre-processing in our ML script.  Our pre-processing included removal of nulls and string values such as "_".  Our binomial target variable, "Survived” was created through mapping Pilot_Status to either a 0 or 1, with 1 indicating pilot survival. Lastly, we dummy coded all categorical variables and scaled our data using StandardScaler.  
