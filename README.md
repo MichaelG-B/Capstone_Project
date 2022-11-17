@@ -91,7 +91,7 @@ We utilized from sklearn.model_selection import train_test_split to split and tr
 
 ### Neural Network Test Model
 
-The Neural Net test model was created in Google Colaboratory using Scikit-learn framework, tensorflow and pandas libraries. 
+The Neural Net test model was created in Google Colaboratory using Scikit-learn framework, tensorflow and pandas libraries. The neural network was preprocessed in the same way as the machine learning model. The features in the neural network model were also the same with the exception of using 'Crash_Year' instead of 'Crash_Date'. 
 
 **Preprocessing Data/Feature Selection**
 
@@ -106,18 +106,6 @@ The target variable needed to be converted from the 14 unique values to a binomi
 The categorical features: Summarized_Name, Defense_Category, Ejection_Seats and Pilot_Egress were encoded with Scikit-Learn’s OneHotEncoder. 
 
 ** After binning these items, the final count was reduced to 847 rows and 30 columns.
-
-Resulting features used for Neural Network:
- - Crash_Year,
- - Summarized_Name,
- - Defense_Category,
- - Ejection_Seats,
- - Pilot_Egress,
- - Latitude,
- - Longitude
-
-Target Variable: 
- - Pilot_Status
 
 **Processing**
 
