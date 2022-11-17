@@ -81,6 +81,8 @@ Description of how data was split into training and testing sets
 
 - Database interfaces with the project through the connection from the ETL file to Postgres. It also connects to the machine learning model, visualizations and will eventually connect to the final accuracy table from the machine learning model.
 
+### Future Analysis Possibilities
+
 ### Contributors
 
 Thanks to the following people who have contributed to this project:
