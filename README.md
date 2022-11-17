@@ -103,6 +103,8 @@ The neural network was not as successful as it could have been due to the small 
 
 ### Future Analysis Possibilities
 
+Taking a look at some future analysis efforts we would consider if we were to continue with the project or simply had more time during our analysis, we would conduct more research on some of the features in the dataset that were simply missing too many data points.
+
 ### Contributors
 
 Thanks to the following people who have contributed to this project:
