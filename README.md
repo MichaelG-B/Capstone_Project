@@ -103,11 +103,9 @@ The neural network was not as successful as it could have been due to the small 
 
 ### Future Analysis Possibilities
 
-Taking a look at some future analysis efforts we would consider if we were to continue with the project or simply had more time during our analysis, we would conduct more research on some of the features in the dataset that were simply missing too many data points.
+Taking a look at some future analysis efforts we would possibly consider to increase our machine learning model's accuracy, would be to conduct more research on some of the features in the dataset that were simply missing too many data points.
 
-Some of the features we think would be valuable to research include non-categorical variables such as plane dimensions (size) instead of plane type, location on the plane where hit by enemy fire, and flight patterns such as maneuver, pass, or angle.
-
-
+Some of the features we think would be valuable to research include non-categorical variables such as plane dimensions (size) instead of plane type, location on the plane where hit by enemy fire, and flight patterns such as maneuver, pass, or angle. More insigth into these features would provide more context for the crash and thereby more context into the possibility of survival for the pilot.
 
 ### Contributors
 
