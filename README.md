@@ -90,7 +90,7 @@ With the additional data cleaning and features additions, accuracy improved from
 We utilized from sklearn.model_selection import train_test_split to split and train the testing sets.
 
 ### Neural Network Test Model
-A neural network test model was created in an effort to identify the most effective machine learning model for this project. The small amount of data was a concern while creating this model but we wanted to have proof for ruling out the neural network for use in this case. 
+A neural network test model was created in an effort to identify the most effective machine learning model for this project. The small amount of data was a concern while creating this model but we needed confirmation for ruling out the neural network for use in this case. 
 
 The neural net model was created in Google Colaboratory using Scikit-learn framework, tensorflow and pandas libraries. The neural network was preprocessed in the same way as the Random Forest Model. The features and target variable in the neural network model were also the same with the exception of using a 'Crash_Year' feature as well. After binning and encoding the feauture values, the final dataset count was reduced to 847 rows and 30 columns. The data was then processed like the machine learning model using Scikit-learn StandardScaler and train_test_split to split data into training and testing sets. **At this point the fact that there were less than 1000 rows of data was a major deterrent for using the neural network as our primary model for this project**. 
 
