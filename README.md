@@ -105,6 +105,10 @@ The neural network was not as successful as it could have been due to the small 
 
 Taking a look at some future analysis efforts we would consider if we were to continue with the project or simply had more time during our analysis, we would conduct more research on some of the features in the dataset that were simply missing too many data points.
 
+Some of the features we think would be valuable to research include non-categorical variables such as plane dimensions (size) instead of plane type, location on the plane where hit by enemy fire, and flight patterns such as maneuver, pass, or angle.
+
+
+
 ### Contributors
 
 Thanks to the following people who have contributed to this project:
