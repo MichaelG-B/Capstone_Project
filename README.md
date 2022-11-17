@@ -100,7 +100,7 @@ These scores are mediocre in predicting the survivability of the pilot in a comb
 **Conclusions**
 
 The biggest challenge was using features with enough values for a neural net model, this requirement alone eliminated various pertinent features such as: Mission Type, Target Objective, Where (the plane was) Hit, Altitude, Airspeed, etc. that would have been excellent characteristics to train the neural network on. 
-The neural network was not as successful as it could have been due to the small size of the data set that it had to work with. In order for this neural network to be successfully trained on predicting pilot survivability in aircraft crash, more data would need to be provided. Additional relevant features would need to be added as well as more values to existing features.
+The neural network was not as successful as it could have been due to the small size of the data set that it had to work with. In order for this neural network to be successfully trained on predicting pilot survivability in aircraft crash, more data would need to be provided. Additional relevant features would need to be added as well as more values to existing features. For a detailed description of the Neural Net Model please see the ReadMe in the Machine Learning/NeuralNet_Test folder.
 
 ### Contributors
 
