@@ -50,7 +50,7 @@ The database stores static data in the form of 11 tables. These tables include t
 
 Supplementary tables were created to expand on or clean the data from the original *usaf_table*. Through additional research from www.vietnamairlosses.com, wikipedia, and various other sources, the team created and imported csv files into the following postgres tables: *aircraft_information*, *base_table*, *loss_locations_table*, *country_table*, and *defense_type* tables. The *aircraft_information* table expanded the abbreviated 'Aircraft Type' feature to include full aircraft name and summarized name as well as added an ejection seat feature. *Base_table* and *country_table* both expanded on abbreviated data by including full country names and complete base names along with the latitude and longitude of each base. The *defense_type* table was created to clean and categorize the multitude of values in the original 'Defense Type' feature. Finally, the *loss_locations_table* was produced with cleaned and converted (to decimal degrees) latitude and longitude data.
 
-The database includes three separate joins that were steps in the process to generate our final table, *usaf_coomplete*. The first join created the *aircraft_table* and connected the original *usaf_table* with the supplementary *aircraft_information* table in order to update the unique aircraft serial number to include 'full_name' and 'summarized_name' of each aircraft type as well as ejection seat status. The second join generated the *usaf_defense* table by uniting our original table with the supplementary *defense_type* table so that each aircraft serial number would contain the new categorized defense type. The final join produced the ultimate *usaf_complete* table by connecting the newly made *aircraft_table* with the newly made *usaf_defense* table. The final *usaf_complete* table encompassed expanded and supplemental data into a clean and straightforward table to be used by the machine learning model and visualizations. 
+The database includes three separate joins that were steps in the process to generate our final table, *usaf_complete*. The first join created the *aircraft_table* and connected the original *usaf_table* with the supplementary *aircraft_information* table in order to update the unique aircraft serial number to include 'full_name' and 'summarized_name' of each aircraft type as well as ejection seat status. The second join generated the *usaf_defense* table by uniting our original table with the supplementary *defense_type* table so that each aircraft serial number would contain the new categorized defense type. The final join produced the ultimate *usaf_complete* table by connecting the newly made *aircraft_table* with the newly made *usaf_defense* table. The final *usaf_complete* table encompassed expanded and supplemental data into a clean and straightforward table to be used by the machine learning model and visualizations. 
 
 The database interfaces with the project through the SQLAlchemy connection from the ETL file to Postgres. The Postgres database is also interfaced with the machine learning file by bringing data to the model with a SQLAlchemy connection and returning the results of the machine learning model back to Postgres.
 
@@ -83,7 +83,7 @@ To refine and engineer our features supplemental datasets containing variables s
 
 Feature selection was a result of multiple accuracy tests.  Dummy coding lead to the use 47 columns in the model versus the initial 7. This limited our ability to use a correlation matrix to identify features.  Lastly, feature selection was limited because of the size of the data set and the amount of null values. 
 
-With the additional data cleaning and features additions, accuracy imporved from **60%** to **84%**.
+With the additional data cleaning and features additions, accuracy improved from **60%** to **84%**.
 
 **Description of how data was split into training and testing sets**
 
@@ -143,21 +143,7 @@ Thanks to the following people who have contributed to this project:
 * [@MichaelG-B](https://github.com/MichaelG-B) 
 
 
-## Segment 3
 
-### Michael Beyer - Square Role
-
-- Worked on creating a GIF for our Crash Locations map that would skim through markers on the map by year (1962-1973)
-
-- Worked with Ben and Clara to edit our Leaflet/D3 map we created; specifically testing out additional layers that could potentially be used.
-
-- Worked on editing our mock slides to prepare for the final presentation.
-
-- Updated and managed our projects github repository in order to keep a clean working repository
-
-- Helped team members with issues/problems that arose with Github
-
-### Samuel Boester - Triangle 
 #### Initial Draft
 Utilizing a scrapped database for U.S.A.F. plane crashes during the Vietnam War, multiple supervised ML models were created to see if pilot survival could be predicted by the following **1)** The ammunition or guns used to shoot down the plane "Defense type" **2)** Location data such as “Mission Phase” and home “Base” **3)** The pilot's aircraft "Aircraft Type".  Other variables existed in the database, however many observations had null values.  Therefore, usable features were limited for our model.
 Considering our data types (All Categorical) and limited observations (1000-1500) an ensemble model appeared to be the best fit for our analysis.  To prove that multiple sampling techniques and logistic regression analysis were run and compared based upon balanced accuracy scores. 
