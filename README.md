@@ -1,7 +1,7 @@
 # Vietnam War Plane Crash Survivability
 ### Project Summary
 
-[Slides](https://docs.google.com/presentation/d/1qWWm32a59_d50zv70wdiNtwFNZ0R9fyxviYYN1JGfe0/edit#slide=id.g17df074bfcd_0_1)
+[Slides](https://docs.google.com/presentation/d/1qWWm32a59_d50zv70wdiNtwFNZ0R9fyxviYYN1JGfe0/edit?usp=sharing)
 
 ### **Topic**
 An analysis of pilot survivability from U.S. aircraft combat losses during the Vietnam War.
