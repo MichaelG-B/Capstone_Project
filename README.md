@@ -104,7 +104,7 @@ The neural network was not as successful as it could have been due to the small 
 
 ### Future Analysis Recommendations
 
-Future analysis would consist of more extensive research in an effort to fill in the missing gaps on certain crash characteristics and increase the dataset size. Addtional research would also be conducted to add more non-categorical variables.  Example: Plane dimensions (size) versus plane type.
+Future analysis would consist of more extensive research in an effort to fill in the missing gaps on certain crash characteristics and increase the dataset size. Additional research would also be conducted to add more non-categorical variables.  Example: Plane dimensions (size) versus plane type.
 
 ### Contributors
 
