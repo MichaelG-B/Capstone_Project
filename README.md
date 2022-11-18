@@ -104,8 +104,7 @@ The neural network was not as successful as it could have been due to the small 
 
 ### Future Analysis Recommendations
 
-More time would have given us the opportunity to conduct additional research on certain features in the dataset that were simply missing too many values to be utilized in the machine learning model. One example of these features is 'Where Hit' which is where the plane was hit by the defense type. This particular feature would have been an excellent variable to train the machine learning model on to predict pilot survivability. Other features that were missing numerous values would have been explored to find the missing data, such as flight pattern, altitude, airspeed or maneuver. 
-Additional insight into these features would provide more information for the crash data and therefore more context into the possibility of survival for the pilot. Furthermore, investigating and adding numerical variables such as plane dimensions (size) would be an effective way to better train the machine learning model. 
+Future analysis would consist of more extensive research in an effort to fill in the missing gaps on certain crash characteristics and increase the dataset size. Addtional research would also be conducted to add more non-categorical variables.  Example: Plane dimensions (size) versus plane type.
 
 ### Contributors
 
