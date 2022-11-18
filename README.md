@@ -14,16 +14,16 @@ Can looking at the characteristics of each warplane crash predict whether or not
 ### **Technologies Used**
 - Python
 - Tableau
-- Postgres
+- PostgreSQL
 - D3 & Leaflet
 ### **Data Cleaning and Analysis** 
-All webscraping is being completed using the webscraping library BeautifulSoup. Data cleaning, organizating, and all exploratory analysis is being completed in Pandas.
+All webscraping was completed using the webscraping library BeautifulSoup. Data cleaning, organizing, and all exploratory analysis is being completed in Pandas.
 ### **Database Storage** 
-Our database has been created in PostgreSQL. The sqlalchemy module was utilized to pull in data from our python ETL file to Postgres and from Postgres to our machine learning python file.
+Our database was created in PostgreSQL. The sqlalchemy module was utilized to pull in data from our python ETL file to Postgres and from Postgres to our machine learning python file.
 ### **Machine Learning** 
-SciKitLearn is the ML libary we are using in Python to create our model.
+SciKit-Learn is the machine learning libary used in Python to create our model.
 ### **Dashboard** 
-Using Tableau to create a visual story our findings. An interactive map of crash locations was created in D3 + Leaflet and is embedded into our Tableau story and hosted as a page on our Github repo.
+Tableau was utilized to create a visual story of our findings. An interactive map of crash locations was created in D3 + Leaflet and is embedded into our Tableau story and hosted as a page on our Github repo.
 
 
 ![](Capstone%20Project/Visualizations/Project%20Flowchart.png)
@@ -32,7 +32,7 @@ Using Tableau to create a visual story our findings. An interactive map of crash
 Our raw data was first scraped using the BeautifulSoup library in Pandas. A while loop was used to loop through each individual crash page in Aviation Archaeology and scrape the data found on that page into a single column dataframe.
 
 ### Initial Data Cleaning
-The initial dataframe of raw scrapped data was first split into multiple columns. Although there are only 1576 crashes listed on the website, the web Id of the last crash was 1606. This is because some of the webpages were completely blank tables devoid of any data. These resulting blank rows in the data frame were removed.
+The initial dataframe of raw scraped data was first split into multiple columns. Although there are only 1576 crashes listed on the website, the web Id of the last crash was 1606. This is because some of the webpages were completely blank tables devoid of any data. These resulting blank rows in the data frame were removed.
 
 Rows with no Aircraft Serial Number (Aircraft_SN) were also dropped. Many of these rows with no unique crash identifier also had a lot of other missing data. This brought the dataframe down from 1576 crashes to 1540. 
 
@@ -55,8 +55,9 @@ The database includes three separate joins that were steps in the process to gen
 The database interfaces with the project through the SQLAlchemy connection from the ETL file to Postgres. The Postgres database is also interfaced with the machine learning file by bringing data to the model with a SQLAlchemy connection and returning the results of the machine learning model back to Postgres.
 
 ### Data Exploration
-Tableau was utilized to help us visualize our data and better understand what features might contribute towards a machine learning model. It can be found here: [Link to Dashboard](https://public.tableau.com/views/Capstone_Project_Workbook/FinalStory?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link). 
-Fields pertaining to the mission (ie. base, mission phase, etc.) and the aircraft (ie. aircraft name, ejection seat availability, etc.) were visualized. Pilot status was used as a color marker to reveal the breakdown between KIA and survived for each of these fields. Some of the terms found in this dashboard may not be familiar to many readers. A list of these key terms: **KIA - Killed in Action**, **MIA - Missing in Action**, **POW - Prisoner of War**, **SAM - Surface-to-Air Missile**, **AAA - Anti-Aircraft Artillery**, **MIG - Soviet-built fighter aircraft**
+Tableau was utilized to help visualize our data and better understand what features might contribute towards a machine learning model.
+[Link to our Dashboard](https://public.tableau.com/views/Capstone_Project_Workbook/FinalStory?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link). 
+Fields pertaining to the mission (ie. base, mission phase, etc.) and the aircraft (ie. aircraft name, ejection seat availability, etc.) were visualized. Pilot status was used as a color marker to reveal the breakdown between KIA and survived for each of these fields. Some of the terms found in this dashboard may not be familiar to many readers. Key terms include: **KIA - Killed in Action**, **MIA - Missing in Action**, **POW - Prisoner of War**, **SAM - Surface-to-Air Missile**, **AAA - Anti-Aircraft Artillery**, **MIG - Soviet-built fighter aircraft**
 
 ![](https://github.com/MichaelG-B/Capstone_Project/blob/079f57a4a71d2260850d1bd086ffb723479870e6/Final_crash_locations_gif.gif)
 
@@ -67,26 +68,26 @@ A simple map of KIA crashes in red and survived in blue was initially created in
 ![Leaflet_Snapshot](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Visualizations/Screenshots/Final_Leaflet_Snapshot.PNG)
 
 
-### ML Analysis
-After our data exploration phase and a general idea of what features we would select for testing, several supervised models were tested to answer our question:
+### Machine Learning Analysis
+After the data exploration phase which gave us a general idea of what features would be select for testing, several supervised models were tested to answer our question:
 
-"Can pilot survivability be predicted with military data such as plane type, location data (Base, Mission Phase, Lat/Lon), defense type (artillery used to down the plan), and aircraft features (ejection seat Y/N)?" 
+"Can pilot survivability be predicted with military data such as plane type, location data (Base, Mission Phase, Lat/Lon), defense type (main cause of crash), and aircraft features (ejection seat Y/N)?" 
 
 #### Pre-Processing
-To preserve data in Postgres, we decided to conduct some final pre-processing in our ML script.  Our pre-processing included removal of nulls and string values such as "_".  Our binomial target variable, "Survived” was created through mapping Pilot_Status to either a 0 or 1, with 1 indicating pilot survival. Lastly, we dummy coded all categorical variables and scaled our data using StandardScaler.  
+To preserve data in Postgres, we decided to conduct some final pre-processing in our ML script.  Pre-processing included removal of nulls and string values such as "_".  Our binomial target variable, "Survived” was created through mapping Pilot_Status to either a 0 or 1, with 1 indicating pilot survival. Finally, we dummy coded all categorical variables and scaled our data using StandardScaler.  
 
 #### Feature Selection and Initial Model Testing 
-Feature selection was limited due to the number of nulls in the dataset.  Moreover, many variables were categorical requiring dummy coding and generated 44 columns.  As a result, we did not use a correlation matrix to select features, and rather used Tableau to gain a general idea of what variables to test.  The models that were tested included: Decision Tree, Random Forest, and Multi-Logistic Regression with multiple sampling techniques.  After testing different features, we selected Aircraft_type, Mission_Phase, Base, Defense_Category. All models were trained and split using Sklearn, but did not require balancing since our target variable was fairly balanced (Survived = 732 vs Did Not Survive = 402). In our initial tests, the Random Forrest model out preformed all other models with an accuracy score 60% vs 55% from all other models.  
+Feature selection was limited due to the number of nulls in the dataset.  Moreover, many variables were categorical which required dummy coding and generated 44 columns.  As a result, we did not use a correlation matrix to select features, and rather used Tableau to gain a general idea of what variables to test.  The models that were tested included: Decision Tree, Random Forest, and Multi-Logistic Regression with multiple sampling techniques.  After testing different features, we selected Aircraft_type, Mission_Phase, Base, Defense_Category. All models were trained and split using Scikit-learn, but did not require balancing since our target variable was fairly balanced (Survived = 732 vs Did Not Survive = 402). In our initial tests, the Random Forrest model out performed all other models with an accuracy score 60% vs 55% from all other models.  
 
 #### Refinement and Final Model
 To improve our initial Random Forest model, new features were added from supplemental datasets such “summarized” aircraft types, “summarized” defense types, Ejection Seats (Y/N) and Pilot Egress (how they exited the plane). Lastly, our location type variables Base and Mission_Phase were dropped in favor of numeric longitude and latitude data. With the addition of these variables the model's accuracy improved from **60%** to **84%**.
 
 #### Confusion Matrix
-The below confusion matrix was created with the package Seaborn.  This package allows us to clearly identify the true positive/negative and false positive/negative percentages of our total predictions.  We can easily see that TP and TF predictions equate to our model's accuracy score of 84%.  Despite the limitations of our data (nulls, available features, and mainly categorical variables), we believe our model preformed quite well and answers the question... **Yes** plane, defense, and location variables were indeed able to predict survivability during the Vietnam War. 
+The below confusion matrix was created with the package Seaborn.  This package allows us to clearly identify the true positive/negative and false positive/negative percentages of our total predictions.  We can easily see that TP and TF predictions equate to our model's accuracy score of 84%.  Despite the limitations of our data (nulls, available features, and mainly categorical variables), we believe our model performed quite well and answers the question... **Yes** plane, defense, and location variables were indeed able to predict survivability during the Vietnam War. 
  
 ![](https://github.com/MichaelG-B/Capstone_Project/blob/main/Capstone%20Project/Machine%20Learning/resources/cm_heatmap.png)
 
-*As an addition, the team wanted to experiment with nueral networks, however this model was not chosen.  Please see our below nueral network test.*  
+*As an addition, the team wanted to experiment with neural network, however this model was not chosen.  Please see our below neural network test.*  
 
 ### Neural Network Test Model
 A neural network test model was created in an effort to identify the most effective machine learning model for this project. The small amount of data was a concern while creating this model but we needed confirmation for ruling out the neural network for use in this case. 
@@ -96,16 +97,16 @@ The neural net model was created in Google Colaboratory using Scikit-learn frame
 Due to the small amount of data going into this model we kept our neural network relatively simple using three layers, 10 nodes and a combination of relu and sigmoid actvation functions. After refining and optimizing the model, the accuracy results reached **66.51%** with a loss of **64.1%**.
 These scores are mediocre in predicting the survivability of the pilot in a combat aircraft crash during the Vietnam War. Considering the question, it is not as important to have an extremely high accuracy score here, but it would have shown success in the neural network model if the score was over 75%. 
 
-**Conclusions**
+**Neural Network Conclusions**
 
 The biggest challenge was using features with enough values for a neural net model, this requirement alone eliminated various pertinent features such as: Mission Type, Target Objective, Where (the plane was) Hit, Altitude, Airspeed, etc. that would have been excellent characteristics to train the neural network on. 
 The neural network was not as successful as it could have been due to the small size of the data set that it had to work with. In order for this neural network to be successfully trained on predicting pilot survivability in aircraft crash, more data would need to be provided. Additional relevant features would need to be added as well as more values to existing features. For a detailed description of the Neural Net Model please see the ReadMe in the Machine Learning/NeuralNet_Test folder.
 
-### Future Analysis Possibilities
+### Future Analysis Recommendations
 
-Taking a look at some future analysis efforts we would possibly consider to increase our machine learning model's accuracy, would be to conduct more research on some of the features in the dataset that were simply missing too many data points.
+More time would have given us the opportunity to conduct more research on certain features in the dataset that were simply missing too many values to be utilized in the machine learning model. One example of these feautes is 'Where Hit' which is where the plane was hit by the defense type. This particular feature would have been an excellent variable to train the machine learning model on. Other features that were missing numerous values would have been researched to find the missing data, such as flight pattern, altitude, airspeed or maneuver. More insight into these features would provide more information for the crash data and thereby more context into the possibility of survival for the pilot.
 
-Some of the features we think would be valuable to research include non-categorical variables such as plane dimensions (size) instead of plane type, location on the plane where hit by enemy fire, and flight patterns such as maneuver, pass, or angle. More insigth into these features would provide more context for the crash and thereby more context into the possibility of survival for the pilot.
+Further research would have been conducted to find more numerical variables such as plane dimensions (size) to use in the machine learning model instead of plane type. 
 
 ### Contributors
 
